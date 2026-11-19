@@ -31,12 +31,14 @@ namespace LostAndFound
         {
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panelHeader.Controls.Add(this.label2);
             this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -56,6 +58,18 @@ namespace LostAndFound
             this.label1.TabIndex = 0;
             this.label1.Text = "UMTC Lost and Found";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(18, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(260, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "University of Mindanao - Tagum Campus";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,5 +88,6 @@ namespace LostAndFound
 
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
