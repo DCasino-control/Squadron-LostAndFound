@@ -30,18 +30,31 @@ namespace LostAndFound
         private void InitializeComponent()
         {
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
-
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(165, 42, 42);
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(800, 85);
             this.panelHeader.TabIndex = 0;
-
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Georgia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(15, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(385, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "UMTC Lost and Found";
             // 
             // Form1
             // 
@@ -51,6 +64,8 @@ namespace LostAndFound
             this.Controls.Add(this.panelHeader);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -58,5 +73,6 @@ namespace LostAndFound
         #endregion
 
         private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Label label1;
     }
 }
