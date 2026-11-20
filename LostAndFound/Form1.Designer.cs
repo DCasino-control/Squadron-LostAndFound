@@ -36,6 +36,9 @@ namespace LostAndFound
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlDivider = new System.Windows.Forms.Panel();
             this.btnReportLost = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearchMatch = new System.Windows.Forms.Button();
+            this.btnPostFound = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +84,7 @@ namespace LostAndFound
             this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown;
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Location = new System.Drawing.Point(15, 115);
             this.btnDashboard.Name = "btnDashboard";
@@ -106,7 +109,7 @@ namespace LostAndFound
             this.btnReportLost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.btnReportLost.FlatAppearance.BorderSize = 0;
             this.btnReportLost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportLost.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportLost.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportLost.ForeColor = System.Drawing.Color.White;
             this.btnReportLost.Location = new System.Drawing.Point(15, 165);
             this.btnReportLost.Name = "btnReportLost";
@@ -118,12 +121,58 @@ namespace LostAndFound
             this.btnReportLost.UseVisualStyleBackColor = false;
             this.btnReportLost.Click += new System.EventHandler(this.btnReportLost_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(474, 89);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(8, 8);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchMatch
+            // 
+            this.btnSearchMatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnSearchMatch.FlatAppearance.BorderSize = 0;
+            this.btnSearchMatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchMatch.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchMatch.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMatch.Location = new System.Drawing.Point(15, 265);
+            this.btnSearchMatch.Name = "btnSearchMatch";
+            this.btnSearchMatch.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnSearchMatch.Size = new System.Drawing.Size(180, 42);
+            this.btnSearchMatch.TabIndex = 4;
+            this.btnSearchMatch.Text = "Search and Match";
+            this.btnSearchMatch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchMatch.UseVisualStyleBackColor = false;
+            this.btnSearchMatch.Click += new System.EventHandler(this.btnSearchMatch_Click);
+            // 
+            // btnPostFound
+            // 
+            this.btnPostFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnPostFound.FlatAppearance.BorderSize = 0;
+            this.btnPostFound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPostFound.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPostFound.ForeColor = System.Drawing.Color.White;
+            this.btnPostFound.Location = new System.Drawing.Point(15, 215);
+            this.btnPostFound.Name = "btnPostFound";
+            this.btnPostFound.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPostFound.Size = new System.Drawing.Size(180, 42);
+            this.btnPostFound.TabIndex = 5;
+            this.btnPostFound.Text = "Post Found Item";
+            this.btnPostFound.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPostFound.UseVisualStyleBackColor = false;
+            this.btnPostFound.Click += new System.EventHandler(this.btnPostFound_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1134, 661);
+            this.Controls.Add(this.btnPostFound);
+            this.Controls.Add(this.btnSearchMatch);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnReportLost);
             this.Controls.Add(this.pnlDivider);
             this.Controls.Add(this.pnlSidebar);
@@ -148,5 +197,8 @@ namespace LostAndFound
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel pnlDivider;
         private System.Windows.Forms.Button btnReportLost;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearchMatch;
+        private System.Windows.Forms.Button btnPostFound;
     }
 }
