@@ -31,14 +31,15 @@ namespace LostAndFound
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.lblBrand = new System.Windows.Forms.Label();
-            this.lblSubtitle = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.lblSubtitle = new System.Windows.Forms.Label();
+            this.lblBrand = new System.Windows.Forms.Label();
             this.pnlDivider = new System.Windows.Forms.Panel();
             this.btnReportLost = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSearchMatch = new System.Windows.Forms.Button();
             this.btnPostFound = new System.Windows.Forms.Button();
+            this.btnClaimReturn = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,29 +54,6 @@ namespace LostAndFound
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(210, 661);
             this.pnlSidebar.TabIndex = 0;
-            // 
-            // lblBrand
-            // 
-            this.lblBrand.AutoSize = true;
-            this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrand.ForeColor = System.Drawing.Color.White;
-            this.lblBrand.Location = new System.Drawing.Point(15, 25);
-            this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(166, 30);
-            this.lblBrand.TabIndex = 0;
-            this.lblBrand.Text = "Lost and Found";
-            // 
-            // lblSubtitle
-            // 
-            this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.lblSubtitle.Location = new System.Drawing.Point(15, 53);
-            this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(114, 15);
-            this.lblSubtitle.TabIndex = 1;
-            this.lblSubtitle.Text = "UM Tagum College";
-            this.lblSubtitle.Click += new System.EventHandler(this.lblSubtitle_Click);
             // 
             // btnDashboard
             // 
@@ -95,6 +73,29 @@ namespace LostAndFound
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // lblSubtitle
+            // 
+            this.lblSubtitle.AutoSize = true;
+            this.lblSubtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.lblSubtitle.Location = new System.Drawing.Point(15, 53);
+            this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(114, 15);
+            this.lblSubtitle.TabIndex = 1;
+            this.lblSubtitle.Text = "UM Tagum College";
+            this.lblSubtitle.Click += new System.EventHandler(this.lblSubtitle_Click);
+            // 
+            // lblBrand
+            // 
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrand.ForeColor = System.Drawing.Color.White;
+            this.lblBrand.Location = new System.Drawing.Point(15, 25);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(166, 30);
+            this.lblBrand.TabIndex = 0;
+            this.lblBrand.Text = "Lost and Found";
             // 
             // pnlDivider
             // 
@@ -164,12 +165,30 @@ namespace LostAndFound
             this.btnPostFound.UseVisualStyleBackColor = false;
             this.btnPostFound.Click += new System.EventHandler(this.btnPostFound_Click);
             // 
+            // btnClaimReturn
+            // 
+            this.btnClaimReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnClaimReturn.FlatAppearance.BorderSize = 0;
+            this.btnClaimReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClaimReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClaimReturn.ForeColor = System.Drawing.Color.White;
+            this.btnClaimReturn.Location = new System.Drawing.Point(15, 315);
+            this.btnClaimReturn.Name = "btnClaimReturn";
+            this.btnClaimReturn.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnClaimReturn.Size = new System.Drawing.Size(190, 45);
+            this.btnClaimReturn.TabIndex = 6;
+            this.btnClaimReturn.Text = "Claim and Return";
+            this.btnClaimReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClaimReturn.UseVisualStyleBackColor = false;
+            this.btnClaimReturn.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1134, 661);
+            this.Controls.Add(this.btnClaimReturn);
             this.Controls.Add(this.btnPostFound);
             this.Controls.Add(this.btnSearchMatch);
             this.Controls.Add(this.button1);
@@ -200,5 +219,6 @@ namespace LostAndFound
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSearchMatch;
         private System.Windows.Forms.Button btnPostFound;
+        private System.Windows.Forms.Button btnClaimReturn;
     }
 }

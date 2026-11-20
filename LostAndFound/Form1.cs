@@ -42,8 +42,17 @@ namespace LostAndFound
             RoundButton(btnReportLost, 8);
             RoundButton(btnPostFound, 8);
             RoundButton(btnSearchMatch, 8);
+            RoundButton(btnClaimReturn, 8);
 
+            // Default active button
             SetActiveButton(btnDashboard);
+
+            // Connect click events
+            btnDashboard.Click += btnDashboard_Click;
+            btnReportLost.Click += btnReportLost_Click;
+            btnPostFound.Click += btnPostFound_Click;
+            btnSearchMatch.Click += btnSearchMatch_Click;
+            btnClaimReturn.Click += btnClaimReturn_Click;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,20 +67,23 @@ namespace LostAndFound
         {
         }
 
-        // Select only one navigation button at a time
+        // Reset all buttons and highlight selected button
         private void SetActiveButton(Button activeButton)
         {
-            btnDashboard.BackColor = Color.FromArgb(125, 29, 29);
-            btnDashboard.ForeColor = Color.White;
+            Button[] buttons =
+            {
+                btnDashboard,
+                btnReportLost,
+                btnPostFound,
+                btnSearchMatch,
+                btnClaimReturn
+            };
 
-            btnReportLost.BackColor = Color.FromArgb(125, 29, 29);
-            btnReportLost.ForeColor = Color.White;
-
-            btnPostFound.BackColor = Color.FromArgb(125, 29, 29);
-            btnPostFound.ForeColor = Color.White;
-
-            btnSearchMatch.BackColor = Color.FromArgb(125, 29, 29);
-            btnSearchMatch.ForeColor = Color.White;
+            foreach (Button button in buttons)
+            {
+                button.BackColor = Color.FromArgb(125, 29, 29);
+                button.ForeColor = Color.White;
+            }
 
             activeButton.BackColor = Color.White;
             activeButton.ForeColor = Color.FromArgb(125, 29, 29);
@@ -97,7 +109,12 @@ namespace LostAndFound
             SetActiveButton(btnSearchMatch);
         }
 
-        // Smooth rounded button edges
+        private void btnClaimReturn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnClaimReturn);
+        }
+
+        // Rounded button styling
         private void RoundButton(Button button, int radius)
         {
             button.FlatStyle = FlatStyle.Flat;
@@ -117,54 +134,27 @@ namespace LostAndFound
             if (button.Width <= 0 || button.Height <= 0)
                 return;
 
-            int scale = 4;
+            GraphicsPath regionPath = new GraphicsPath();
 
-            using (Bitmap bitmap = new Bitmap(
-                button.Width * scale,
-                button.Height * scale))
-            {
-                using (Graphics graphics = Graphics.FromImage(bitmap))
-                {
-                    graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            int w = button.Width;
+            int h = button.Height;
+            int d = radius * 2;
 
-                    using (GraphicsPath path = new GraphicsPath())
-                    {
-                        int width = button.Width * scale;
-                        int height = button.Height * scale;
-                        int diameter = radius * 2 * scale;
+            regionPath.AddArc(0, 0, d, d, 180, 90);
+            regionPath.AddArc(w - d, 0, d, d, 270, 90);
+            regionPath.AddArc(w - d, h - d, d, d, 0, 90);
+            regionPath.AddArc(0, h - d, d, d, 90, 90);
 
-                        path.AddArc(0, 0, diameter, diameter, 180, 90);
-                        path.AddArc(width - diameter, 0,
-                            diameter, diameter, 270, 90);
-                        path.AddArc(width - diameter, height - diameter,
-                            diameter, diameter, 0, 90);
-                        path.AddArc(0, height - diameter,
-                            diameter, diameter, 90, 90);
+            regionPath.CloseFigure();
 
-                        path.CloseFigure();
+            button.Region?.Dispose();
+            button.Region = new Region(regionPath);
 
-                        graphics.FillPath(Brushes.Black, path);
-                    }
-                }
+            regionPath.Dispose();
+        }
 
-                GraphicsPath regionPath = new GraphicsPath();
-
-                int w = button.Width;
-                int h = button.Height;
-                int d = radius * 2;
-
-                regionPath.AddArc(0, 0, d, d, 180, 90);
-                regionPath.AddArc(w - d, 0, d, d, 270, 90);
-                regionPath.AddArc(w - d, h - d, d, d, 0, 90);
-                regionPath.AddArc(0, h - d, d, d, 90, 90);
-
-                regionPath.CloseFigure();
-
-                button.Region?.Dispose();
-                button.Region = new Region(regionPath);
-
-                regionPath.Dispose();
-            }
+        private void button2_Click(object sender, EventArgs e)
+        {
         }
     }
 }
