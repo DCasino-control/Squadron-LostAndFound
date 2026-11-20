@@ -118,9 +118,9 @@ namespace LostAndFound
             this.pnlFooter.Controls.Add(this.lblUserRole);
             this.pnlFooter.Controls.Add(this.pnlFooterLine);
             this.pnlFooter.Controls.Add(this.lblUserName);
-            this.pnlFooter.Location = new System.Drawing.Point(0, 570);
+            this.pnlFooter.Location = new System.Drawing.Point(0, 520);
             this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(210, 130);
+            this.pnlFooter.Size = new System.Drawing.Size(210, 180);
             this.pnlFooter.TabIndex = 7;
             // 
             // pnlDivider
@@ -203,7 +203,7 @@ namespace LostAndFound
             // 
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.White;
-            this.lblUserName.Location = new System.Drawing.Point(15, 8);
+            this.lblUserName.Location = new System.Drawing.Point(15, 13);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(180, 18);
             this.lblUserName.TabIndex = 7;
@@ -221,7 +221,7 @@ namespace LostAndFound
             // lblUserRole
             // 
             this.lblUserRole.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblUserRole.Location = new System.Drawing.Point(15, 27);
+            this.lblUserRole.Location = new System.Drawing.Point(15, 32);
             this.lblUserRole.Name = "lblUserRole";
             this.lblUserRole.Size = new System.Drawing.Size(180, 18);
             this.lblUserRole.TabIndex = 1;
@@ -229,16 +229,18 @@ namespace LostAndFound
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.Brown;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(15, 49);
+            this.btnLogout.Location = new System.Drawing.Point(15, 55);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(180, 28);
+            this.btnLogout.Size = new System.Drawing.Size(180, 40);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "Log out";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Form1
             // 

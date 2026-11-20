@@ -44,6 +44,9 @@ namespace LostAndFound
             RoundButton(btnSearchMatch, 8);
             RoundButton(btnClaimReturn, 8);
 
+            // Rounded logout button
+            RoundButton(btnLogout, 8);
+
             // Default active button
             SetActiveButton(btnDashboard);
 
@@ -67,7 +70,7 @@ namespace LostAndFound
         {
         }
 
-        // Reset all buttons and highlight selected button
+        // Reset all navigation buttons and highlight selected button
         private void SetActiveButton(Button activeButton)
         {
             Button[] buttons =
@@ -159,17 +162,18 @@ namespace LostAndFound
 
         private void pnlSidebar_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void lblUserRole_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
+        }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
         }
     }
 }
