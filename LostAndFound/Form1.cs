@@ -156,5 +156,20 @@ namespace LostAndFound
         private void button2_Click(object sender, EventArgs e)
         {
         }
+
+        private void pnlSidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblUserRole_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

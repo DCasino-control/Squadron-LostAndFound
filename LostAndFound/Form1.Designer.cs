@@ -34,26 +34,38 @@ namespace LostAndFound
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
+            this.pnlFooter = new System.Windows.Forms.Panel();
             this.pnlDivider = new System.Windows.Forms.Panel();
             this.btnReportLost = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnSearchMatch = new System.Windows.Forms.Button();
             this.btnPostFound = new System.Windows.Forms.Button();
             this.btnClaimReturn = new System.Windows.Forms.Button();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.pnlFooterLine = new System.Windows.Forms.Panel();
+            this.lblUserRole = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
+            this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.pnlSidebar.Controls.Add(this.pnlDivider);
             this.pnlSidebar.Controls.Add(this.btnDashboard);
+            this.pnlSidebar.Controls.Add(this.btnPostFound);
+            this.pnlSidebar.Controls.Add(this.btnReportLost);
+            this.pnlSidebar.Controls.Add(this.btnSearchMatch);
+            this.pnlSidebar.Controls.Add(this.btnClaimReturn);
             this.pnlSidebar.Controls.Add(this.lblSubtitle);
             this.pnlSidebar.Controls.Add(this.lblBrand);
+            this.pnlSidebar.Controls.Add(this.pnlFooter);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(210, 661);
             this.pnlSidebar.TabIndex = 0;
+            this.pnlSidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSidebar_Paint);
             // 
             // btnDashboard
             // 
@@ -97,6 +109,20 @@ namespace LostAndFound
             this.lblBrand.TabIndex = 0;
             this.lblBrand.Text = "Lost and Found";
             // 
+            // pnlFooter
+            // 
+            this.pnlFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.pnlFooter.Controls.Add(this.btnLogout);
+            this.pnlFooter.Controls.Add(this.lblUserRole);
+            this.pnlFooter.Controls.Add(this.pnlFooterLine);
+            this.pnlFooter.Controls.Add(this.lblUserName);
+            this.pnlFooter.Location = new System.Drawing.Point(0, 570);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(210, 130);
+            this.pnlFooter.TabIndex = 7;
+            // 
             // pnlDivider
             // 
             this.pnlDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(145)))), ((int)(((byte)(145)))));
@@ -121,15 +147,6 @@ namespace LostAndFound
             this.btnReportLost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportLost.UseVisualStyleBackColor = false;
             this.btnReportLost.Click += new System.EventHandler(this.btnReportLost_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(474, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(8, 8);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnSearchMatch
             // 
@@ -182,18 +199,53 @@ namespace LostAndFound
             this.btnClaimReturn.UseVisualStyleBackColor = false;
             this.btnClaimReturn.Click += new System.EventHandler(this.button2_Click);
             // 
+            // lblUserName
+            // 
+            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.White;
+            this.lblUserName.Location = new System.Drawing.Point(15, 8);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(180, 18);
+            this.lblUserName.TabIndex = 7;
+            this.lblUserName.Text = "Maria Santos";
+            this.lblUserName.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // pnlFooterLine
+            // 
+            this.pnlFooterLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
+            this.pnlFooterLine.Location = new System.Drawing.Point(15, 3);
+            this.pnlFooterLine.Name = "pnlFooterLine";
+            this.pnlFooterLine.Size = new System.Drawing.Size(180, 1);
+            this.pnlFooterLine.TabIndex = 1;
+            // 
+            // lblUserRole
+            // 
+            this.lblUserRole.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblUserRole.Location = new System.Drawing.Point(15, 27);
+            this.lblUserRole.Name = "lblUserRole";
+            this.lblUserRole.Size = new System.Drawing.Size(180, 18);
+            this.lblUserRole.TabIndex = 1;
+            this.lblUserRole.Text = "Student";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(15, 49);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(180, 28);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1134, 661);
-            this.Controls.Add(this.btnClaimReturn);
-            this.Controls.Add(this.btnPostFound);
-            this.Controls.Add(this.btnSearchMatch);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnReportLost);
-            this.Controls.Add(this.pnlDivider);
             this.Controls.Add(this.pnlSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -204,6 +256,7 @@ namespace LostAndFound
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlSidebar.ResumeLayout(false);
             this.pnlSidebar.PerformLayout();
+            this.pnlFooter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -216,9 +269,13 @@ namespace LostAndFound
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel pnlDivider;
         private System.Windows.Forms.Button btnReportLost;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSearchMatch;
         private System.Windows.Forms.Button btnPostFound;
         private System.Windows.Forms.Button btnClaimReturn;
+        private System.Windows.Forms.Panel pnlFooter;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Panel pnlFooterLine;
+        private System.Windows.Forms.Label lblUserRole;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
