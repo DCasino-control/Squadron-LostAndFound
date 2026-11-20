@@ -106,7 +106,7 @@ namespace LostAndFound
             this.btnReportLost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.btnReportLost.FlatAppearance.BorderSize = 0;
             this.btnReportLost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportLost.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportLost.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportLost.ForeColor = System.Drawing.Color.White;
             this.btnReportLost.Location = new System.Drawing.Point(15, 165);
             this.btnReportLost.Name = "btnReportLost";
@@ -116,6 +116,7 @@ namespace LostAndFound
             this.btnReportLost.Text = "Report Lost Item";
             this.btnReportLost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportLost.UseVisualStyleBackColor = false;
+            this.btnReportLost.Click += new System.EventHandler(this.btnReportLost_Click);
             // 
             // Form1
             // 
