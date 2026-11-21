@@ -40,6 +40,7 @@
             this.lblRole = new System.Windows.Forms.Label();
             this.pnlRoleBorder = new System.Windows.Forms.Panel();
             this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.pnlWelcome.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.pnlRoleBorder.SuspendLayout();
@@ -100,6 +101,7 @@
             this.pnlLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlLogin.BackColor = System.Drawing.Color.White;
+            this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.lblPassword);
             this.pnlLogin.Controls.Add(this.txtPassword);
             this.pnlLogin.Controls.Add(this.txtIDNumber);
@@ -196,6 +198,15 @@
             this.cmbRole.Size = new System.Drawing.Size(298, 23);
             this.cmbRole.TabIndex = 3;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(84, 99);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 9;
+            this.btnLogin.Text = "button1";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,5 +243,6 @@
         private System.Windows.Forms.TextBox txtIDNumber;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
