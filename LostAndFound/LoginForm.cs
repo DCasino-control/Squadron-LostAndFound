@@ -135,6 +135,10 @@ namespace LostAndFound
         private void lblPassword_Click(object sender, EventArgs e)
         {
         }
+
+        private void pnlLogin_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 
     // ROUNDED TEXTBOX BORDER

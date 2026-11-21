@@ -33,6 +33,7 @@
             this.lblWelcomeTitle = new System.Windows.Forms.Label();
             this.lblLoginTitle = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtIDNumber = new System.Windows.Forms.TextBox();
@@ -40,7 +41,8 @@
             this.lblRole = new System.Windows.Forms.Label();
             this.pnlRoleBorder = new System.Windows.Forms.Panel();
             this.cmbRole = new System.Windows.Forms.ComboBox();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.lnkRegister = new System.Windows.Forms.LinkLabel();
+            this.lblRegister = new System.Windows.Forms.Label();
             this.pnlWelcome.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.pnlRoleBorder.SuspendLayout();
@@ -101,6 +103,8 @@
             this.pnlLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlLogin.BackColor = System.Drawing.Color.White;
+            this.pnlLogin.Controls.Add(this.lblRegister);
+            this.pnlLogin.Controls.Add(this.lnkRegister);
             this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.lblPassword);
             this.pnlLogin.Controls.Add(this.txtPassword);
@@ -113,6 +117,22 @@
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(380, 661);
             this.pnlLogin.TabIndex = 1;
+            this.pnlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLogin_Paint);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.Brown;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(36, 430);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(308, 42);
+            this.btnLogin.TabIndex = 9;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // lblPassword
             // 
@@ -198,20 +218,35 @@
             this.cmbRole.Size = new System.Drawing.Size(298, 23);
             this.cmbRole.TabIndex = 3;
             // 
-            // btnLogin
+            // lnkRegister
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Brown;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(36, 430);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(308, 42);
-            this.btnLogin.TabIndex = 9;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.lnkRegister.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.lnkRegister.AutoSize = true;
+            this.lnkRegister.BackColor = System.Drawing.Color.Transparent;
+            this.lnkRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lnkRegister.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkRegister.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.lnkRegister.LinkColor = System.Drawing.Color.Brown;
+            this.lnkRegister.Location = new System.Drawing.Point(177, 485);
+            this.lnkRegister.Name = "lnkRegister";
+            this.lnkRegister.Size = new System.Drawing.Size(56, 17);
+            this.lnkRegister.TabIndex = 3;
+            this.lnkRegister.TabStop = true;
+            this.lnkRegister.Text = "Register";
+            this.lnkRegister.VisitedLinkColor = System.Drawing.Color.Brown;
+            // 
+            // lblRegister
+            // 
+            this.lblRegister.AutoSize = true;
+            this.lblRegister.BackColor = System.Drawing.Color.Transparent;
+            this.lblRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRegister.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblRegister.Location = new System.Drawing.Point(95, 485);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(81, 17);
+            this.lblRegister.TabIndex = 3;
+            this.lblRegister.Text = "No account?";
             // 
             // LoginForm
             // 
@@ -250,5 +285,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.LinkLabel lnkRegister;
+        private System.Windows.Forms.Label lblRegister;
     }
 }
