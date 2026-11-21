@@ -29,10 +29,16 @@
         private void InitializeComponent()
         {
             this.pnlWelcome = new System.Windows.Forms.Panel();
-            this.pnlLogin = new System.Windows.Forms.Panel();
             this.lblWelcomeTitle = new System.Windows.Forms.Label();
             this.lblWelcomeDescription = new System.Windows.Forms.Label();
+            this.lblLoginTitle = new System.Windows.Forms.Label();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.pnlRoleBorder = new System.Windows.Forms.Panel();
             this.pnlWelcome.SuspendLayout();
+            this.pnlLogin.SuspendLayout();
+            this.pnlRoleBorder.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlWelcome
@@ -42,21 +48,10 @@
             this.pnlWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.pnlWelcome.Controls.Add(this.lblWelcomeDescription);
             this.pnlWelcome.Controls.Add(this.lblWelcomeTitle);
-            this.pnlWelcome.Controls.Add(this.pnlLogin);
             this.pnlWelcome.Location = new System.Drawing.Point(0, 0);
             this.pnlWelcome.Name = "pnlWelcome";
             this.pnlWelcome.Size = new System.Drawing.Size(770, 661);
             this.pnlWelcome.TabIndex = 0;
-            // 
-            // pnlLogin
-            // 
-            this.pnlLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlLogin.BackColor = System.Drawing.Color.White;
-            this.pnlLogin.Location = new System.Drawing.Point(770, 0);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(380, 661);
-            this.pnlLogin.TabIndex = 0;
             // 
             // lblWelcomeTitle
             // 
@@ -81,6 +76,70 @@
             this.lblWelcomeDescription.Text = "Report, search, and return lost belongings. For students, professors, and guards." +
     "";
             this.lblWelcomeDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblWelcomeDescription.UseMnemonic = false;
+            // 
+            // lblLoginTitle
+            // 
+            this.lblLoginTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoginTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.lblLoginTitle.Location = new System.Drawing.Point(36, 150);
+            this.lblLoginTitle.Name = "lblLoginTitle";
+            this.lblLoginTitle.Size = new System.Drawing.Size(308, 35);
+            this.lblLoginTitle.TabIndex = 3;
+            this.lblLoginTitle.Text = "Sign in";
+            this.lblLoginTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlLogin
+            // 
+            this.pnlLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlLogin.BackColor = System.Drawing.Color.White;
+            this.pnlLogin.Controls.Add(this.lblRole);
+            this.pnlLogin.Controls.Add(this.lblLoginTitle);
+            this.pnlLogin.Controls.Add(this.pnlRoleBorder);
+            this.pnlLogin.Location = new System.Drawing.Point(770, 0);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(380, 661);
+            this.pnlLogin.TabIndex = 1;
+            // 
+            // lblRole
+            // 
+            this.lblRole.BackColor = System.Drawing.Color.Transparent;
+            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblRole.Location = new System.Drawing.Point(36, 205);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(308, 20);
+            this.lblRole.TabIndex = 4;
+            this.lblRole.Text = "Role";
+            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cmbRole
+            // 
+            this.cmbRole.BackColor = System.Drawing.Color.White;
+            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbRole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Items.AddRange(new object[] {
+            "Student",
+            "Professor",
+            "Guard"});
+            this.cmbRole.Location = new System.Drawing.Point(5, 3);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(298, 23);
+            this.cmbRole.TabIndex = 3;
+            // 
+            // pnlRoleBorder
+            // 
+            this.pnlRoleBorder.BackColor = System.Drawing.Color.White;
+            this.pnlRoleBorder.Controls.Add(this.cmbRole);
+            this.pnlRoleBorder.Location = new System.Drawing.Point(36, 225);
+            this.pnlRoleBorder.Name = "pnlRoleBorder";
+            this.pnlRoleBorder.Size = new System.Drawing.Size(308, 38);
+            this.pnlRoleBorder.TabIndex = 3;
             // 
             // LoginForm
             // 
@@ -88,6 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1134, 661);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlWelcome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -96,6 +156,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Campus Lost and Found System ";
             this.pnlWelcome.ResumeLayout(false);
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlRoleBorder.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -103,8 +165,12 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlWelcome;
-        private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Label lblWelcomeTitle;
         private System.Windows.Forms.Label lblWelcomeDescription;
+        private System.Windows.Forms.Label lblLoginTitle;
+        private System.Windows.Forms.Panel pnlLogin;
+        private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.Panel pnlRoleBorder;
     }
 }
