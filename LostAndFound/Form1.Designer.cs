@@ -190,9 +190,11 @@ namespace LostAndFound
             this.btnClaimReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClaimReturn.ForeColor = System.Drawing.Color.White;
             this.btnClaimReturn.Location = new System.Drawing.Point(15, 315);
+            this.btnClaimReturn.MaximumSize = new System.Drawing.Size(180, 42);
+            this.btnClaimReturn.MinimumSize = new System.Drawing.Size(180, 42);
             this.btnClaimReturn.Name = "btnClaimReturn";
             this.btnClaimReturn.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnClaimReturn.Size = new System.Drawing.Size(190, 45);
+            this.btnClaimReturn.Size = new System.Drawing.Size(180, 42);
             this.btnClaimReturn.TabIndex = 6;
             this.btnClaimReturn.Text = "Claim and Return";
             this.btnClaimReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
