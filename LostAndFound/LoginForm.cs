@@ -27,7 +27,6 @@ namespace LostAndFound
             roleDropdown.Location = new Point(36, 225);
             roleDropdown.Size = new Size(308, 38);
             roleDropdown.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-
             roleDropdown.BringToFront();
 
             // ID NUMBER BORDER
@@ -58,6 +57,7 @@ namespace LostAndFound
             lblPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblPassword.ForeColor = Color.FromArgb(70, 70, 70);
             lblPassword.BackColor = Color.Transparent;
+
             // PASSWORD BORDER
             passwordBorder = new RoundedTextBoxBorder();
 
@@ -79,16 +79,61 @@ namespace LostAndFound
 
             passwordBorder.BringToFront();
             lblPassword.BringToFront();
+
+            // ROUNDED LOGIN BUTTON
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.BackColor = Color.FromArgb(165, 42, 42);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Text = "Login";
+            btnLogin.Cursor = Cursors.Hand;
+
+            MakeLoginButtonRounded();
+
+            btnLogin.Resize += (s, e) => MakeLoginButtonRounded();
+        }
+
+        // MAKE LOGIN BUTTON ROUNDED
+        private void MakeLoginButtonRounded()
+        {
+            if (btnLogin.Width <= 0 || btnLogin.Height <= 0)
+                return;
+
+            GraphicsPath path = new GraphicsPath();
+
+            int radius = 9;
+            int diameter = radius * 2;
+
+            path.AddArc(0, 0, diameter, diameter, 180, 90);
+            path.AddArc(
+                btnLogin.Width - diameter, 0,
+                diameter, diameter, 270, 90
+            );
+            path.AddArc(
+                btnLogin.Width - diameter,
+                btnLogin.Height - diameter,
+                diameter, diameter, 0, 90
+            );
+            path.AddArc(
+                0, btnLogin.Height - diameter,
+                diameter, diameter, 90, 90
+            );
+
+            path.CloseFigure();
+
+            Region oldRegion = btnLogin.Region;
+            btnLogin.Region = new Region(path);
+
+            path.Dispose();
+            oldRegion?.Dispose();
         }
 
         private void lblWelcomeTitle_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblPassword_Click(object sender, EventArgs e)
         {
-
         }
     }
 
