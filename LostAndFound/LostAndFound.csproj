@@ -52,6 +52,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BusinessRuleException.cs" />
+    <Compile Include="Models\Claim.cs" />
+    <Compile Include="Models\Constants.cs" />
+    <Compile Include="Models\FoundItemReport.cs" />
+    <Compile Include="Models\ItemReport.cs" />
+    <Compile Include="Models\LostItemReport.cs" />
+    <Compile Include="Models\PotentialMatch.cs" />
+    <Compile Include="Models\ReportFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -76,8 +84,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modeling\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
