@@ -58,6 +58,14 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BusinessRuleException.cs" />
+    <Compile Include="Models\Claim.cs" />
+    <Compile Include="Models\Constants.cs" />
+    <Compile Include="Models\FoundItemReport.cs" />
+    <Compile Include="Models\ItemReport.cs" />
+    <Compile Include="Models\LostItemReport.cs" />
+    <Compile Include="Models\PotentialMatch.cs" />
+    <Compile Include="Models\ReportFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -88,5 +96,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
