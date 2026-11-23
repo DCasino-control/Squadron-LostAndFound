@@ -8,7 +8,38 @@ namespace LostAndFound
 {
     public partial class LoginForm : Form
     {
+        // CONFIRM PASSWORD TEXTBOX AND BORDER
+        private RoundedTextBoxBorder confirmPasswordBorder;
+        private TextBox txtConfirmPassword;
+
+        // REGISTER PASSWORD TEXTBOX AND BORDER
+        private RoundedTextBoxBorder regPasswordBorder;
+        private TextBox txtRegPassword;
+
+        // EMAIL TEXTBOX AND BORDER
+        private RoundedTextBoxBorder emailBorder;
+        private TextBox txtEmail;
+
+        // CONTACT NUMBER TEXTBOX AND BORDER
+        private RoundedTextBoxBorder contactNumberBorder;
+        private TextBox txtContactNumber;
+
+        // COURSE TEXTBOX AND BORDER
+        private RoundedTextBoxBorder courseBorder;
+        private TextBox txtCourse;
+
+        // REGISTRATION ID TEXTBOX AND BORDER
+        private RoundedTextBoxBorder regIDBorder;
+
+        // FULL NAME TEXTBOX AND BORDER
+        private RoundedTextBoxBorder fullNameBorder;
+        private TextBox txtFullName;
+
+        // CUSTOM DROPDOWNS
         private RoundedRoleDropdown roleDropdown;
+        private RoundedRoleDropdown registerRoleDropdown;
+
+        // ROUNDED TEXTBOX BORDERS
         private RoundedTextBoxBorder idBorder;
         private RoundedTextBoxBorder passwordBorder;
 
@@ -16,28 +47,196 @@ namespace LostAndFound
         {
             InitializeComponent();
 
-            // Hide original ComboBox and border panel
+            // LOGIN AND REGISTER PANEL VISIBILITY
+            pnlLogin.Visible = true;
+            pnlRegister.Visible = false;
+
+            pnlRegister.Location = pnlLogin.Location;
+            pnlRegister.Size = pnlLogin.Size;
+            pnlRegister.AutoScroll = false;
+
+            // REGISTER AND SIGN IN LINK CLICK EVENTS
+            lnkRegister.Click += lnkRegister_Click;
+            lnkSignIn.Click += lnkSignIn_Click;
+
+            // COMPACT REGISTRATION LABEL POSITIONS
+            lblRegisterTitle.Location = new Point(36, 20);
+            lblRegRole.Location = new Point(36, 65);
+            lblRegID.Location = new Point(36, 130);
+            lblFullName.Location = new Point(36, 195);
+            lblCourse.Location = new Point(36, 260);
+            lblContactNumber.Location = new Point(36, 325);
+            lblEmail.Location = new Point(36, 390);
+            lblRegPassword.Location = new Point(36, 455);
+            lblConfirmPassword.Location = new Point(36, 520);
+
+            // HIDE ORIGINAL LOGIN ROLE COMBOBOX
             cmbRole.Visible = false;
             pnlRoleBorder.Visible = false;
 
-            // CUSTOM ROLE DROPDOWN
+            // CUSTOM LOGIN ROLE DROPDOWN
             roleDropdown = new RoundedRoleDropdown();
-
             roleDropdown.Parent = pnlLogin;
             roleDropdown.Location = new Point(36, 225);
             roleDropdown.Size = new Size(308, 38);
             roleDropdown.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             roleDropdown.BringToFront();
 
-            // ID NUMBER BORDER
-            idBorder = new RoundedTextBoxBorder();
+            // CUSTOM REGISTER ROLE DROPDOWN
+            registerRoleDropdown = new RoundedRoleDropdown();
+            registerRoleDropdown.Parent = pnlRegister;
+            registerRoleDropdown.Location = new Point(36, 85);
+            registerRoleDropdown.Size = new Size(308, 38);
+            registerRoleDropdown.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            registerRoleDropdown.BringToFront();
 
+            cmbRegRole.Visible = false;
+
+            // REGISTRATION ID NUMBER BORDER
+            regIDBorder = new RoundedTextBoxBorder();
+            regIDBorder.Parent = pnlRegister;
+            regIDBorder.Location = new Point(36, 150);
+            regIDBorder.Size = new Size(308, 38);
+            regIDBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            // REGISTRATION ID NUMBER TEXTBOX
+            txtRegID = new TextBox();
+            txtRegID.Parent = regIDBorder;
+            txtRegID.Location = new Point(8, 5);
+            txtRegID.Size = new Size(292, 28);
+            txtRegID.BorderStyle = BorderStyle.None;
+            txtRegID.BackColor = Color.FromArgb(255, 255, 255);
+            txtRegID.ForeColor = Color.FromArgb(35, 35, 35);
+            txtRegID.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular);
+            txtRegID.TextAlign = HorizontalAlignment.Left;
+
+            regIDBorder.BringToFront();
+
+            // FULL NAME TEXTBOX BORDER
+            fullNameBorder = new RoundedTextBoxBorder();
+            fullNameBorder.Parent = pnlRegister;
+            fullNameBorder.Location = new Point(36, 215);
+            fullNameBorder.Size = new Size(308, 38);
+            fullNameBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            // FULL NAME TEXTBOX
+            txtFullName = new TextBox();
+            txtFullName.Parent = fullNameBorder;
+            txtFullName.Location = new Point(8, 5);
+            txtFullName.Size = new Size(292, 28);
+            txtFullName.BorderStyle = BorderStyle.None;
+            txtFullName.BackColor = Color.FromArgb(255, 255, 255);
+            txtFullName.ForeColor = Color.FromArgb(35, 35, 35);
+            txtFullName.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular);
+            txtFullName.TextAlign = HorizontalAlignment.Left;
+
+            fullNameBorder.BringToFront();
+
+            // COURSE TEXTBOX
+            courseBorder = new RoundedTextBoxBorder();
+            courseBorder.Parent = pnlRegister;
+            courseBorder.Location = new Point(36, 280);
+            courseBorder.Size = new Size(308, 38);
+            courseBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            txtCourse = new TextBox();
+            txtCourse.Parent = courseBorder;
+            txtCourse.Location = new Point(8, 5);
+            txtCourse.Size = new Size(292, 28);
+            txtCourse.BorderStyle = BorderStyle.None;
+            txtCourse.BackColor = Color.FromArgb(255, 255, 255);
+            txtCourse.ForeColor = Color.FromArgb(35, 35, 35);
+            txtCourse.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular);
+            txtCourse.TextAlign = HorizontalAlignment.Left;
+
+            courseBorder.BringToFront();
+
+            // CONTACT NUMBER TEXTBOX
+            contactNumberBorder = new RoundedTextBoxBorder();
+            contactNumberBorder.Parent = pnlRegister;
+            contactNumberBorder.Location = new Point(36, 345);
+            contactNumberBorder.Size = new Size(308, 38);
+            contactNumberBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            txtContactNumber = new TextBox();
+            txtContactNumber.Parent = contactNumberBorder;
+            txtContactNumber.Location = new Point(8, 5);
+            txtContactNumber.Size = new Size(292, 28);
+            txtContactNumber.BorderStyle = BorderStyle.None;
+            txtContactNumber.BackColor = Color.FromArgb(255, 255, 255);
+            txtContactNumber.ForeColor = Color.FromArgb(35, 35, 35);
+            txtContactNumber.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular);
+            txtContactNumber.TextAlign = HorizontalAlignment.Left;
+
+            contactNumberBorder.BringToFront();
+
+            // EMAIL TEXTBOX
+            emailBorder = new RoundedTextBoxBorder();
+            emailBorder.Parent = pnlRegister;
+            emailBorder.Location = new Point(36, 410);
+            emailBorder.Size = new Size(308, 38);
+            emailBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            txtEmail = new TextBox();
+            txtEmail.Parent = emailBorder;
+            txtEmail.Location = new Point(8, 5);
+            txtEmail.Size = new Size(292, 28);
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.BackColor = Color.FromArgb(255, 255, 255);
+            txtEmail.ForeColor = Color.FromArgb(35, 35, 35);
+            txtEmail.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular);
+            txtEmail.TextAlign = HorizontalAlignment.Left;
+
+            emailBorder.BringToFront();
+
+            // REGISTER PASSWORD TEXTBOX
+            regPasswordBorder = new RoundedTextBoxBorder();
+            regPasswordBorder.Parent = pnlRegister;
+            regPasswordBorder.Location = new Point(36, 475);
+            regPasswordBorder.Size = new Size(308, 38);
+            regPasswordBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            txtRegPassword = new TextBox();
+            txtRegPassword.Parent = regPasswordBorder;
+            txtRegPassword.Location = new Point(8, 5);
+            txtRegPassword.Size = new Size(292, 28);
+            txtRegPassword.BorderStyle = BorderStyle.None;
+            txtRegPassword.BackColor = Color.FromArgb(255, 255, 255);
+            txtRegPassword.ForeColor = Color.FromArgb(35, 35, 35);
+            txtRegPassword.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular);
+            txtRegPassword.TextAlign = HorizontalAlignment.Left;
+            txtRegPassword.UseSystemPasswordChar = true;
+
+            regPasswordBorder.BringToFront();
+
+            // CONFIRM PASSWORD TEXTBOX
+            confirmPasswordBorder = new RoundedTextBoxBorder();
+            confirmPasswordBorder.Parent = pnlRegister;
+            confirmPasswordBorder.Location = new Point(36, 540);
+            confirmPasswordBorder.Size = new Size(308, 38);
+            confirmPasswordBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            txtConfirmPassword = new TextBox();
+            txtConfirmPassword.Parent = confirmPasswordBorder;
+            txtConfirmPassword.Location = new Point(8, 5);
+            txtConfirmPassword.Size = new Size(292, 28);
+            txtConfirmPassword.BorderStyle = BorderStyle.None;
+            txtConfirmPassword.BackColor = Color.FromArgb(255, 255, 255);
+            txtConfirmPassword.ForeColor = Color.FromArgb(35, 35, 35);
+            txtConfirmPassword.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular);
+            txtConfirmPassword.TextAlign = HorizontalAlignment.Left;
+            txtConfirmPassword.UseSystemPasswordChar = true;
+
+            confirmPasswordBorder.BringToFront();
+
+            // LOGIN ID NUMBER BORDER
+            idBorder = new RoundedTextBoxBorder();
             idBorder.Parent = pnlLogin;
             idBorder.Location = new Point(36, 298);
             idBorder.Size = new Size(308, 38);
             idBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
-            // ID NUMBER TEXTBOX
+            // LOGIN ID NUMBER TEXTBOX
             txtIDNumber.Parent = idBorder;
             txtIDNumber.Location = new Point(8, 5);
             txtIDNumber.Size = new Size(292, 28);
@@ -49,7 +248,7 @@ namespace LostAndFound
 
             idBorder.BringToFront();
 
-            // PASSWORD LABEL
+            // LOGIN PASSWORD LABEL
             lblPassword.Parent = pnlLogin;
             lblPassword.Text = "Password";
             lblPassword.Location = new Point(36, 345);
@@ -58,15 +257,14 @@ namespace LostAndFound
             lblPassword.ForeColor = Color.FromArgb(70, 70, 70);
             lblPassword.BackColor = Color.Transparent;
 
-            // PASSWORD BORDER
+            // LOGIN PASSWORD BORDER
             passwordBorder = new RoundedTextBoxBorder();
-
             passwordBorder.Parent = pnlLogin;
             passwordBorder.Location = new Point(36, 371);
             passwordBorder.Size = new Size(308, 38);
             passwordBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
-            // PASSWORD TEXTBOX
+            // LOGIN PASSWORD TEXTBOX
             txtPassword.Parent = passwordBorder;
             txtPassword.Location = new Point(8, 5);
             txtPassword.Size = new Size(292, 28);
@@ -88,46 +286,84 @@ namespace LostAndFound
             btnLogin.Text = "Login";
             btnLogin.Cursor = Cursors.Hand;
 
+            // ROUNDED REGISTER BUTTON
+            btnRegister.FlatStyle = FlatStyle.Flat;
+            btnRegister.FlatAppearance.BorderSize = 0;
+            btnRegister.BackColor = Color.FromArgb(165, 42, 42);
+            btnRegister.ForeColor = Color.White;
+            btnRegister.Text = "Register";
+            btnRegister.Cursor = Cursors.Hand;
+
+            // APPLY ROUNDED EDGES
             MakeLoginButtonRounded();
 
             btnLogin.Resize += (s, e) => MakeLoginButtonRounded();
+            btnRegister.Resize += (s, e) => MakeLoginButtonRounded();
         }
 
-        // MAKE LOGIN BUTTON ROUNDED
+        // REGISTER LINK CLICK METHOD
+        private void lnkRegister_Click(object sender, EventArgs e)
+        {
+            pnlLogin.Visible = false;
+            pnlRegister.Visible = true;
+            pnlRegister.BringToFront();
+        }
+
+        // SIGN IN LINK CLICK METHOD
+        private void lnkSignIn_Click(object sender, EventArgs e)
+        {
+            pnlRegister.Visible = false;
+            pnlLogin.Visible = true;
+            pnlLogin.BringToFront();
+        }
+
+        // MAKE LOGIN AND REGISTER BUTTONS ROUNDED
         private void MakeLoginButtonRounded()
         {
-            if (btnLogin.Width <= 0 || btnLogin.Height <= 0)
-                return;
+            // ROUND LOGIN BUTTON
+            if (btnLogin.Width > 0 && btnLogin.Height > 0)
+            {
+                using (GraphicsPath loginPath = new GraphicsPath())
+                {
+                    int radius = 9;
+                    int diameter = radius * 2;
 
-            GraphicsPath path = new GraphicsPath();
+                    loginPath.AddArc(0, 0, diameter, diameter, 180, 90);
+                    loginPath.AddArc(btnLogin.Width - diameter, 0, diameter, diameter, 270, 90);
+                    loginPath.AddArc(btnLogin.Width - diameter, btnLogin.Height - diameter, diameter, diameter, 0, 90);
+                    loginPath.AddArc(0, btnLogin.Height - diameter, diameter, diameter, 90, 90);
 
-            int radius = 9;
-            int diameter = radius * 2;
+                    loginPath.CloseFigure();
 
-            path.AddArc(0, 0, diameter, diameter, 180, 90);
-            path.AddArc(
-                btnLogin.Width - diameter, 0,
-                diameter, diameter, 270, 90
-            );
-            path.AddArc(
-                btnLogin.Width - diameter,
-                btnLogin.Height - diameter,
-                diameter, diameter, 0, 90
-            );
-            path.AddArc(
-                0, btnLogin.Height - diameter,
-                diameter, diameter, 90, 90
-            );
+                    Region oldLoginRegion = btnLogin.Region;
+                    btnLogin.Region = new Region(loginPath);
+                    oldLoginRegion?.Dispose();
+                }
+            }
 
-            path.CloseFigure();
+            // ROUND REGISTER BUTTON
+            if (btnRegister.Width > 0 && btnRegister.Height > 0)
+            {
+                using (GraphicsPath registerPath = new GraphicsPath())
+                {
+                    int radius = 9;
+                    int diameter = radius * 2;
 
-            Region oldRegion = btnLogin.Region;
-            btnLogin.Region = new Region(path);
+                    registerPath.AddArc(0, 0, diameter, diameter, 180, 90);
+                    registerPath.AddArc(btnRegister.Width - diameter, 0, diameter, diameter, 270, 90);
+                    registerPath.AddArc(btnRegister.Width - diameter, btnRegister.Height - diameter, diameter, diameter, 0, 90);
+                    registerPath.AddArc(0, btnRegister.Height - diameter, diameter, diameter, 90, 90);
 
-            path.Dispose();
-            oldRegion?.Dispose();
+                    registerPath.CloseFigure();
+
+                    Region oldRegisterRegion = btnRegister.Region;
+                    btnRegister.Region = new Region(registerPath);
+                    oldRegisterRegion?.Dispose();
+                }
+            }
         }
 
+        // EXISTING EMPTY EVENTS
         private void lblWelcomeTitle_Click(object sender, EventArgs e)
         {
         }
@@ -141,7 +377,7 @@ namespace LostAndFound
         }
     }
 
-    // ROUNDED TEXTBOX BORDER
+    // ROUNDED TEXTBOX BORDER CLASS
     public class RoundedTextBoxBorder : Panel
     {
         public RoundedTextBoxBorder()
@@ -181,17 +417,22 @@ namespace LostAndFound
                 path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90);
 
                 path.CloseFigure();
-
                 e.Graphics.DrawPath(borderPen, path);
             }
         }
     }
 
-    // CUSTOM ROLE DROPDOWN
+    // CUSTOM ROUNDED ROLE DROPDOWN CLASS
     public class RoundedRoleDropdown : Control
     {
         private string selectedRole = "Student";
-        private string[] roles = { "Student", "Professor", "Guard" };
+
+        private string[] roles =
+        {
+            "Student",
+            "Professor",
+            "Guard"
+        };
 
         private Form popup;
         private FlowLayoutPanel optionsPanel;
@@ -237,10 +478,7 @@ namespace LostAndFound
             popup.Height = roles.Length * 34 + 2;
             popup.TopMost = true;
 
-            Point screenPosition = PointToScreen(
-                new Point(0, Height)
-            );
-
+            Point screenPosition = PointToScreen(new Point(0, Height));
             popup.Location = screenPosition;
 
             // OUTER BORDER
@@ -258,6 +496,7 @@ namespace LostAndFound
             optionsPanel.Margin = Padding.Empty;
             optionsPanel.BackColor = Color.White;
 
+            // CREATE EACH ROLE OPTION
             foreach (string role in roles)
             {
                 Button option = new Button();
@@ -319,12 +558,9 @@ namespace LostAndFound
 
             using (GraphicsPath path = new GraphicsPath())
             using (SolidBrush background = new SolidBrush(Color.White))
-            using (Pen border = new Pen(
-                Color.FromArgb(228, 220, 220), 1.3f))
-            using (SolidBrush textBrush = new SolidBrush(
-                Color.FromArgb(50, 50, 50)))
-            using (Pen arrowPen = new Pen(
-                Color.FromArgb(50, 50, 50), 1.8f))
+            using (Pen border = new Pen(Color.FromArgb(228, 220, 220), 1.3f))
+            using (SolidBrush textBrush = new SolidBrush(Color.FromArgb(50, 50, 50)))
+            using (Pen arrowPen = new Pen(Color.FromArgb(50, 50, 50), 1.8f))
             {
                 int radius = 9;
                 int d = radius * 2;

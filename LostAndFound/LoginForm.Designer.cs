@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.pnlWelcome = new System.Windows.Forms.Panel();
             this.lblWelcomeDescription = new System.Windows.Forms.Label();
             this.lblWelcomeTitle = new System.Windows.Forms.Label();
             this.lblLoginTitle = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.lblRegister = new System.Windows.Forms.Label();
+            this.lnkRegister = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -41,11 +44,24 @@
             this.lblRole = new System.Windows.Forms.Label();
             this.pnlRoleBorder = new System.Windows.Forms.Panel();
             this.cmbRole = new System.Windows.Forms.ComboBox();
-            this.lnkRegister = new System.Windows.Forms.LinkLabel();
-            this.lblRegister = new System.Windows.Forms.Label();
+            this.pnlRegister = new System.Windows.Forms.Panel();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.lblRegPassword = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblContactNumber = new System.Windows.Forms.Label();
+            this.lblCourse = new System.Windows.Forms.Label();
+            this.cmbRegRole = new System.Windows.Forms.ComboBox();
+            this.lblRegRole = new System.Windows.Forms.Label();
+            this.lblRegisterTitle = new System.Windows.Forms.Label();
+            this.lblRegID = new System.Windows.Forms.Label();
+            this.txtRegID = new System.Windows.Forms.TextBox();
+            this.lblFullName = new System.Windows.Forms.Label();
+            this.lblConfirmPassword = new System.Windows.Forms.Label();
+            this.lnkSignIn = new System.Windows.Forms.LinkLabel();
             this.pnlWelcome.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.pnlRoleBorder.SuspendLayout();
+            this.pnlRegister.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlWelcome
@@ -118,6 +134,36 @@
             this.pnlLogin.Size = new System.Drawing.Size(380, 661);
             this.pnlLogin.TabIndex = 1;
             this.pnlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLogin_Paint);
+            // 
+            // lblRegister
+            // 
+            this.lblRegister.AutoSize = true;
+            this.lblRegister.BackColor = System.Drawing.Color.Transparent;
+            this.lblRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRegister.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblRegister.Location = new System.Drawing.Point(95, 485);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(81, 17);
+            this.lblRegister.TabIndex = 3;
+            this.lblRegister.Text = "No account?";
+            // 
+            // lnkRegister
+            // 
+            this.lnkRegister.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.lnkRegister.AutoSize = true;
+            this.lnkRegister.BackColor = System.Drawing.Color.Transparent;
+            this.lnkRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lnkRegister.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkRegister.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.lnkRegister.LinkColor = System.Drawing.Color.Brown;
+            this.lnkRegister.Location = new System.Drawing.Point(177, 485);
+            this.lnkRegister.Name = "lnkRegister";
+            this.lnkRegister.Size = new System.Drawing.Size(56, 17);
+            this.lnkRegister.TabIndex = 3;
+            this.lnkRegister.TabStop = true;
+            this.lnkRegister.Text = "Register";
+            this.lnkRegister.VisitedLinkColor = System.Drawing.Color.Brown;
             // 
             // btnLogin
             // 
@@ -198,7 +244,7 @@
             this.pnlRoleBorder.Controls.Add(this.cmbRole);
             this.pnlRoleBorder.Location = new System.Drawing.Point(36, 225);
             this.pnlRoleBorder.Name = "pnlRoleBorder";
-            this.pnlRoleBorder.Size = new System.Drawing.Size(308, 38);
+            this.pnlRoleBorder.Size = new System.Drawing.Size(0, 0);
             this.pnlRoleBorder.TabIndex = 3;
             // 
             // cmbRole
@@ -218,35 +264,187 @@
             this.cmbRole.Size = new System.Drawing.Size(298, 23);
             this.cmbRole.TabIndex = 3;
             // 
-            // lnkRegister
+            // pnlRegister
             // 
-            this.lnkRegister.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.lnkRegister.AutoSize = true;
-            this.lnkRegister.BackColor = System.Drawing.Color.Transparent;
-            this.lnkRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lnkRegister.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkRegister.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
-            this.lnkRegister.LinkColor = System.Drawing.Color.Brown;
-            this.lnkRegister.Location = new System.Drawing.Point(177, 485);
-            this.lnkRegister.Name = "lnkRegister";
-            this.lnkRegister.Size = new System.Drawing.Size(56, 17);
-            this.lnkRegister.TabIndex = 3;
-            this.lnkRegister.TabStop = true;
-            this.lnkRegister.Text = "Register";
-            this.lnkRegister.VisitedLinkColor = System.Drawing.Color.Brown;
+            this.pnlRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlRegister.AutoScroll = true;
+            this.pnlRegister.BackColor = System.Drawing.Color.White;
+            this.pnlRegister.Controls.Add(this.lnkSignIn);
+            this.pnlRegister.Controls.Add(this.btnRegister);
+            this.pnlRegister.Controls.Add(this.lblRegPassword);
+            this.pnlRegister.Controls.Add(this.lblEmail);
+            this.pnlRegister.Controls.Add(this.lblContactNumber);
+            this.pnlRegister.Controls.Add(this.lblCourse);
+            this.pnlRegister.Controls.Add(this.cmbRegRole);
+            this.pnlRegister.Controls.Add(this.lblRegRole);
+            this.pnlRegister.Controls.Add(this.lblRegisterTitle);
+            this.pnlRegister.Controls.Add(this.lblRegID);
+            this.pnlRegister.Controls.Add(this.txtRegID);
+            this.pnlRegister.Controls.Add(this.lblFullName);
+            this.pnlRegister.Controls.Add(this.lblConfirmPassword);
+            this.pnlRegister.Location = new System.Drawing.Point(770, 0);
+            this.pnlRegister.Name = "pnlRegister";
+            this.pnlRegister.Size = new System.Drawing.Size(380, 661);
+            this.pnlRegister.TabIndex = 2;
+            this.pnlRegister.Visible = false;
             // 
-            // lblRegister
+            // btnRegister
             // 
-            this.lblRegister.AutoSize = true;
-            this.lblRegister.BackColor = System.Drawing.Color.Transparent;
-            this.lblRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRegister.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblRegister.Location = new System.Drawing.Point(95, 485);
-            this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(81, 17);
-            this.lblRegister.TabIndex = 3;
-            this.lblRegister.Text = "No account?";
+            this.btnRegister.BackColor = System.Drawing.Color.Brown;
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(36, 590);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(308, 40);
+            this.btnRegister.TabIndex = 10;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            // 
+            // lblRegPassword
+            // 
+            this.lblRegPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblRegPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblRegPassword.Location = new System.Drawing.Point(36, 525);
+            this.lblRegPassword.Name = "lblRegPassword";
+            this.lblRegPassword.Size = new System.Drawing.Size(308, 20);
+            this.lblRegPassword.TabIndex = 9;
+            this.lblRegPassword.Text = "Password";
+            this.lblRegPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblEmail.Location = new System.Drawing.Point(36, 450);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(308, 20);
+            this.lblEmail.TabIndex = 8;
+            this.lblEmail.Text = "Email";
+            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblContactNumber
+            // 
+            this.lblContactNumber.BackColor = System.Drawing.Color.Transparent;
+            this.lblContactNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblContactNumber.Location = new System.Drawing.Point(36, 375);
+            this.lblContactNumber.Name = "lblContactNumber";
+            this.lblContactNumber.Size = new System.Drawing.Size(308, 20);
+            this.lblContactNumber.TabIndex = 7;
+            this.lblContactNumber.Text = "Contact number";
+            this.lblContactNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCourse
+            // 
+            this.lblCourse.BackColor = System.Drawing.Color.Transparent;
+            this.lblCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblCourse.Location = new System.Drawing.Point(36, 300);
+            this.lblCourse.Name = "lblCourse";
+            this.lblCourse.Size = new System.Drawing.Size(308, 20);
+            this.lblCourse.TabIndex = 6;
+            this.lblCourse.Text = "Course";
+            this.lblCourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cmbRegRole
+            // 
+            this.cmbRegRole.FormattingEnabled = true;
+            this.cmbRegRole.IntegralHeight = false;
+            this.cmbRegRole.Items.AddRange(new object[] {
+            "Student",
+            "Professor",
+            "Guard"});
+            this.cmbRegRole.Location = new System.Drawing.Point(36, 98);
+            this.cmbRegRole.MaxDropDownItems = 3;
+            this.cmbRegRole.Name = "cmbRegRole";
+            this.cmbRegRole.Size = new System.Drawing.Size(308, 21);
+            this.cmbRegRole.TabIndex = 5;
+            // 
+            // lblRegRole
+            // 
+            this.lblRegRole.BackColor = System.Drawing.Color.Transparent;
+            this.lblRegRole.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblRegRole.Location = new System.Drawing.Point(36, 75);
+            this.lblRegRole.Name = "lblRegRole";
+            this.lblRegRole.Size = new System.Drawing.Size(308, 20);
+            this.lblRegRole.TabIndex = 4;
+            this.lblRegRole.Text = "Role";
+            // 
+            // lblRegisterTitle
+            // 
+            this.lblRegisterTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegisterTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.lblRegisterTitle.Location = new System.Drawing.Point(36, 30);
+            this.lblRegisterTitle.Name = "lblRegisterTitle";
+            this.lblRegisterTitle.Size = new System.Drawing.Size(308, 35);
+            this.lblRegisterTitle.TabIndex = 3;
+            this.lblRegisterTitle.Text = "\tCreate account";
+            this.lblRegisterTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRegID
+            // 
+            this.lblRegID.BackColor = System.Drawing.Color.Transparent;
+            this.lblRegID.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblRegID.Location = new System.Drawing.Point(36, 150);
+            this.lblRegID.Name = "lblRegID";
+            this.lblRegID.Size = new System.Drawing.Size(308, 20);
+            this.lblRegID.TabIndex = 3;
+            this.lblRegID.Text = "ID Number";
+            // 
+            // txtRegID
+            // 
+            this.txtRegID.BackColor = System.Drawing.Color.White;
+            this.txtRegID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRegID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtRegID.Location = new System.Drawing.Point(0, 0);
+            this.txtRegID.Name = "txtRegID";
+            this.txtRegID.Size = new System.Drawing.Size(308, 18);
+            this.txtRegID.TabIndex = 3;
+            // 
+            // lblFullName
+            // 
+            this.lblFullName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblFullName.Location = new System.Drawing.Point(36, 225);
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(308, 20);
+            this.lblFullName.TabIndex = 3;
+            this.lblFullName.Text = "Full name";
+            // 
+            // lblConfirmPassword
+            // 
+            this.lblConfirmPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblConfirmPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblConfirmPassword.Location = new System.Drawing.Point(0, 0);
+            this.lblConfirmPassword.Name = "lblConfirmPassword";
+            this.lblConfirmPassword.Size = new System.Drawing.Size(308, 20);
+            this.lblConfirmPassword.TabIndex = 3;
+            this.lblConfirmPassword.Text = "Confirm password";
+            this.lblConfirmPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lnkSignIn
+            // 
+            this.lnkSignIn.BackColor = System.Drawing.Color.Transparent;
+            this.lnkSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lnkSignIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSignIn.LinkColor = System.Drawing.Color.Brown;
+            this.lnkSignIn.Location = new System.Drawing.Point(36, 635);
+            this.lnkSignIn.Name = "lnkSignIn";
+            this.lnkSignIn.Size = new System.Drawing.Size(308, 20);
+            this.lnkSignIn.TabIndex = 11;
+            this.lnkSignIn.TabStop = true;
+            this.lnkSignIn.Text = "Already registered? Sign in";
+            this.lnkSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm
             // 
@@ -254,9 +452,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1134, 661);
+            this.Controls.Add(this.pnlRegister);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlWelcome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1150, 700);
             this.Name = "LoginForm";
@@ -266,6 +466,8 @@
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             this.pnlRoleBorder.ResumeLayout(false);
+            this.pnlRegister.ResumeLayout(false);
+            this.pnlRegister.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -287,5 +489,19 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel lnkRegister;
         private System.Windows.Forms.Label lblRegister;
+        private System.Windows.Forms.Panel pnlRegister;
+        private System.Windows.Forms.Label lblRegisterTitle;
+        private System.Windows.Forms.ComboBox cmbRegRole;
+        private System.Windows.Forms.Label lblRegRole;
+        private System.Windows.Forms.Label lblRegID;
+        private System.Windows.Forms.TextBox txtRegID;
+        private System.Windows.Forms.Label lblFullName;
+        private System.Windows.Forms.Label lblCourse;
+        private System.Windows.Forms.Label lblContactNumber;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblRegPassword;
+        private System.Windows.Forms.Label lblConfirmPassword;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.LinkLabel lnkSignIn;
     }
 }
