@@ -31,19 +31,19 @@ namespace LostAndFound
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.pnlDivider = new System.Windows.Forms.Panel();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnPostFound = new System.Windows.Forms.Button();
+            this.btnReportLost = new System.Windows.Forms.Button();
+            this.btnSearchMatch = new System.Windows.Forms.Button();
+            this.btnClaimReturn = new System.Windows.Forms.Button();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
             this.pnlFooter = new System.Windows.Forms.Panel();
-            this.pnlDivider = new System.Windows.Forms.Panel();
-            this.btnReportLost = new System.Windows.Forms.Button();
-            this.btnSearchMatch = new System.Windows.Forms.Button();
-            this.btnPostFound = new System.Windows.Forms.Button();
-            this.btnClaimReturn = new System.Windows.Forms.Button();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.pnlFooterLine = new System.Windows.Forms.Panel();
-            this.lblUserRole = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.lblUserRole = new System.Windows.Forms.Label();
+            this.pnlFooterLine = new System.Windows.Forms.Panel();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.pnlSidebar.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,14 @@ namespace LostAndFound
             this.pnlSidebar.TabIndex = 0;
             this.pnlSidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSidebar_Paint);
             // 
+            // pnlDivider
+            // 
+            this.pnlDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(145)))), ((int)(((byte)(145)))));
+            this.pnlDivider.Location = new System.Drawing.Point(15, 95);
+            this.pnlDivider.Name = "pnlDivider";
+            this.pnlDivider.Size = new System.Drawing.Size(180, 1);
+            this.pnlDivider.TabIndex = 1;
+            // 
             // btnDashboard
             // 
             this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -85,6 +93,80 @@ namespace LostAndFound
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnPostFound
+            // 
+            this.btnPostFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnPostFound.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPostFound.FlatAppearance.BorderSize = 0;
+            this.btnPostFound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPostFound.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPostFound.ForeColor = System.Drawing.Color.White;
+            this.btnPostFound.Location = new System.Drawing.Point(15, 215);
+            this.btnPostFound.Name = "btnPostFound";
+            this.btnPostFound.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPostFound.Size = new System.Drawing.Size(180, 42);
+            this.btnPostFound.TabIndex = 5;
+            this.btnPostFound.Text = "Post Found Item";
+            this.btnPostFound.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPostFound.UseVisualStyleBackColor = false;
+            this.btnPostFound.Click += new System.EventHandler(this.btnPostFound_Click);
+            // 
+            // btnReportLost
+            // 
+            this.btnReportLost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnReportLost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportLost.FlatAppearance.BorderSize = 0;
+            this.btnReportLost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportLost.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportLost.ForeColor = System.Drawing.Color.White;
+            this.btnReportLost.Location = new System.Drawing.Point(15, 165);
+            this.btnReportLost.Name = "btnReportLost";
+            this.btnReportLost.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnReportLost.Size = new System.Drawing.Size(180, 42);
+            this.btnReportLost.TabIndex = 2;
+            this.btnReportLost.Text = "Report Lost Item";
+            this.btnReportLost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportLost.UseVisualStyleBackColor = false;
+            this.btnReportLost.Click += new System.EventHandler(this.btnReportLost_Click);
+            // 
+            // btnSearchMatch
+            // 
+            this.btnSearchMatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnSearchMatch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchMatch.FlatAppearance.BorderSize = 0;
+            this.btnSearchMatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchMatch.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchMatch.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMatch.Location = new System.Drawing.Point(15, 265);
+            this.btnSearchMatch.Name = "btnSearchMatch";
+            this.btnSearchMatch.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnSearchMatch.Size = new System.Drawing.Size(180, 42);
+            this.btnSearchMatch.TabIndex = 4;
+            this.btnSearchMatch.Text = "Search and Match";
+            this.btnSearchMatch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchMatch.UseVisualStyleBackColor = false;
+            this.btnSearchMatch.Click += new System.EventHandler(this.btnSearchMatch_Click);
+            // 
+            // btnClaimReturn
+            // 
+            this.btnClaimReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnClaimReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClaimReturn.FlatAppearance.BorderSize = 0;
+            this.btnClaimReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClaimReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClaimReturn.ForeColor = System.Drawing.Color.White;
+            this.btnClaimReturn.Location = new System.Drawing.Point(15, 315);
+            this.btnClaimReturn.MaximumSize = new System.Drawing.Size(180, 42);
+            this.btnClaimReturn.MinimumSize = new System.Drawing.Size(180, 42);
+            this.btnClaimReturn.Name = "btnClaimReturn";
+            this.btnClaimReturn.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnClaimReturn.Size = new System.Drawing.Size(180, 42);
+            this.btnClaimReturn.TabIndex = 6;
+            this.btnClaimReturn.Text = "Claim and Return";
+            this.btnClaimReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClaimReturn.UseVisualStyleBackColor = false;
+            this.btnClaimReturn.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblSubtitle
             // 
@@ -123,112 +205,6 @@ namespace LostAndFound
             this.pnlFooter.Size = new System.Drawing.Size(210, 180);
             this.pnlFooter.TabIndex = 7;
             // 
-            // pnlDivider
-            // 
-            this.pnlDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(145)))), ((int)(((byte)(145)))));
-            this.pnlDivider.Location = new System.Drawing.Point(15, 95);
-            this.pnlDivider.Name = "pnlDivider";
-            this.pnlDivider.Size = new System.Drawing.Size(180, 1);
-            this.pnlDivider.TabIndex = 1;
-            // 
-            // btnReportLost
-            // 
-            this.btnReportLost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnReportLost.FlatAppearance.BorderSize = 0;
-            this.btnReportLost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportLost.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportLost.ForeColor = System.Drawing.Color.White;
-            this.btnReportLost.Location = new System.Drawing.Point(15, 165);
-            this.btnReportLost.Name = "btnReportLost";
-            this.btnReportLost.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnReportLost.Size = new System.Drawing.Size(180, 42);
-            this.btnReportLost.TabIndex = 2;
-            this.btnReportLost.Text = "Report Lost Item";
-            this.btnReportLost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportLost.UseVisualStyleBackColor = false;
-            this.btnReportLost.Click += new System.EventHandler(this.btnReportLost_Click);
-            // 
-            // btnSearchMatch
-            // 
-            this.btnSearchMatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnSearchMatch.FlatAppearance.BorderSize = 0;
-            this.btnSearchMatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchMatch.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchMatch.ForeColor = System.Drawing.Color.White;
-            this.btnSearchMatch.Location = new System.Drawing.Point(15, 265);
-            this.btnSearchMatch.Name = "btnSearchMatch";
-            this.btnSearchMatch.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnSearchMatch.Size = new System.Drawing.Size(180, 42);
-            this.btnSearchMatch.TabIndex = 4;
-            this.btnSearchMatch.Text = "Search and Match";
-            this.btnSearchMatch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchMatch.UseVisualStyleBackColor = false;
-            this.btnSearchMatch.Click += new System.EventHandler(this.btnSearchMatch_Click);
-            // 
-            // btnPostFound
-            // 
-            this.btnPostFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnPostFound.FlatAppearance.BorderSize = 0;
-            this.btnPostFound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPostFound.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPostFound.ForeColor = System.Drawing.Color.White;
-            this.btnPostFound.Location = new System.Drawing.Point(15, 215);
-            this.btnPostFound.Name = "btnPostFound";
-            this.btnPostFound.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnPostFound.Size = new System.Drawing.Size(180, 42);
-            this.btnPostFound.TabIndex = 5;
-            this.btnPostFound.Text = "Post Found Item";
-            this.btnPostFound.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPostFound.UseVisualStyleBackColor = false;
-            this.btnPostFound.Click += new System.EventHandler(this.btnPostFound_Click);
-            // 
-            // btnClaimReturn
-            // 
-            this.btnClaimReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnClaimReturn.FlatAppearance.BorderSize = 0;
-            this.btnClaimReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClaimReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClaimReturn.ForeColor = System.Drawing.Color.White;
-            this.btnClaimReturn.Location = new System.Drawing.Point(15, 315);
-            this.btnClaimReturn.MaximumSize = new System.Drawing.Size(180, 42);
-            this.btnClaimReturn.MinimumSize = new System.Drawing.Size(180, 42);
-            this.btnClaimReturn.Name = "btnClaimReturn";
-            this.btnClaimReturn.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnClaimReturn.Size = new System.Drawing.Size(180, 42);
-            this.btnClaimReturn.TabIndex = 6;
-            this.btnClaimReturn.Text = "Claim and Return";
-            this.btnClaimReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClaimReturn.UseVisualStyleBackColor = false;
-            this.btnClaimReturn.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.ForeColor = System.Drawing.Color.White;
-            this.lblUserName.Location = new System.Drawing.Point(15, 13);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(180, 18);
-            this.lblUserName.TabIndex = 7;
-            this.lblUserName.Text = "Maria Santos";
-            this.lblUserName.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // pnlFooterLine
-            // 
-            this.pnlFooterLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
-            this.pnlFooterLine.Location = new System.Drawing.Point(15, 3);
-            this.pnlFooterLine.Name = "pnlFooterLine";
-            this.pnlFooterLine.Size = new System.Drawing.Size(180, 1);
-            this.pnlFooterLine.TabIndex = 1;
-            // 
-            // lblUserRole
-            // 
-            this.lblUserRole.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblUserRole.Location = new System.Drawing.Point(15, 32);
-            this.lblUserRole.Name = "lblUserRole";
-            this.lblUserRole.Size = new System.Drawing.Size(180, 18);
-            this.lblUserRole.TabIndex = 1;
-            this.lblUserRole.Text = "Student";
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Brown;
@@ -244,6 +220,34 @@ namespace LostAndFound
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // lblUserRole
+            // 
+            this.lblUserRole.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblUserRole.Location = new System.Drawing.Point(15, 32);
+            this.lblUserRole.Name = "lblUserRole";
+            this.lblUserRole.Size = new System.Drawing.Size(180, 18);
+            this.lblUserRole.TabIndex = 1;
+            this.lblUserRole.Text = "Student";
+            // 
+            // pnlFooterLine
+            // 
+            this.pnlFooterLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
+            this.pnlFooterLine.Location = new System.Drawing.Point(15, 3);
+            this.pnlFooterLine.Name = "pnlFooterLine";
+            this.pnlFooterLine.Size = new System.Drawing.Size(180, 1);
+            this.pnlFooterLine.TabIndex = 1;
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.White;
+            this.lblUserName.Location = new System.Drawing.Point(15, 13);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(180, 18);
+            this.lblUserName.TabIndex = 7;
+            this.lblUserName.Text = "Maria Santos";
+            this.lblUserName.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,7 +257,7 @@ namespace LostAndFound
             this.Controls.Add(this.pnlSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Campus Lost and Found System";

@@ -3,11 +3,29 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace LostAndFound
 {
     public partial class LoginForm : Form
     {
+        // DASHBOARD TITLE BAR COLOR
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmSetWindowAttribute(
+            IntPtr hwnd,
+            int attribute,
+            ref int value,
+            int size);
+
+        private void SetTitleBarColor()
+        {
+            int color = ColorTranslator.ToWin32(
+                Color.FromArgb(165, 42, 42));
+
+            DwmSetWindowAttribute(
+                this.Handle, 35, ref color, sizeof(int));
+        }
+
         // CONFIRM PASSWORD TEXTBOX AND BORDER
         private RoundedTextBoxBorder confirmPasswordBorder;
         private TextBox txtConfirmPassword;
@@ -47,6 +65,9 @@ namespace LostAndFound
         {
             InitializeComponent();
 
+            // MATCH DASHBOARD TITLE BAR COLOR
+            SetTitleBarColor();
+
             // LOGIN AND REGISTER PANEL VISIBILITY
             pnlLogin.Visible = true;
             pnlRegister.Visible = false;
@@ -60,15 +81,15 @@ namespace LostAndFound
             lnkSignIn.Click += lnkSignIn_Click;
 
             // COMPACT REGISTRATION LABEL POSITIONS
-            lblRegisterTitle.Location = new Point(36, 20);
-            lblRegRole.Location = new Point(36, 65);
-            lblRegID.Location = new Point(36, 130);
-            lblFullName.Location = new Point(36, 195);
-            lblCourse.Location = new Point(36, 260);
-            lblContactNumber.Location = new Point(36, 325);
-            lblEmail.Location = new Point(36, 390);
-            lblRegPassword.Location = new Point(36, 455);
-            lblConfirmPassword.Location = new Point(36, 520);
+            lblRegisterTitle.Location = new Point(36, 15);
+            lblRegRole.Location = new Point(36, 55);
+            lblRegID.Location = new Point(36, 120);
+            lblFullName.Location = new Point(36, 180);
+            lblCourse.Location = new Point(36, 240);
+            lblContactNumber.Location = new Point(36, 300);
+            lblEmail.Location = new Point(36, 360);
+            lblRegPassword.Location = new Point(36, 420);
+            lblConfirmPassword.Location = new Point(36, 480);
 
             // HIDE ORIGINAL LOGIN ROLE COMBOBOX
             cmbRole.Visible = false;
@@ -85,17 +106,19 @@ namespace LostAndFound
             // CUSTOM REGISTER ROLE DROPDOWN
             registerRoleDropdown = new RoundedRoleDropdown();
             registerRoleDropdown.Parent = pnlRegister;
-            registerRoleDropdown.Location = new Point(36, 85);
+            registerRoleDropdown.Location = new Point(36, 75);
             registerRoleDropdown.Size = new Size(308, 38);
             registerRoleDropdown.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             registerRoleDropdown.BringToFront();
+
+            registerRoleDropdown.SelectedRoleChanged += RegisterRoleDropdown_SelectedRoleChanged;
 
             cmbRegRole.Visible = false;
 
             // REGISTRATION ID NUMBER BORDER
             regIDBorder = new RoundedTextBoxBorder();
             regIDBorder.Parent = pnlRegister;
-            regIDBorder.Location = new Point(36, 150);
+            regIDBorder.Location = new Point(36, 140);
             regIDBorder.Size = new Size(308, 38);
             regIDBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
@@ -115,7 +138,7 @@ namespace LostAndFound
             // FULL NAME TEXTBOX BORDER
             fullNameBorder = new RoundedTextBoxBorder();
             fullNameBorder.Parent = pnlRegister;
-            fullNameBorder.Location = new Point(36, 215);
+            fullNameBorder.Location = new Point(36, 200);
             fullNameBorder.Size = new Size(308, 38);
             fullNameBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
@@ -135,7 +158,7 @@ namespace LostAndFound
             // COURSE TEXTBOX
             courseBorder = new RoundedTextBoxBorder();
             courseBorder.Parent = pnlRegister;
-            courseBorder.Location = new Point(36, 280);
+            courseBorder.Location = new Point(36, 260);
             courseBorder.Size = new Size(308, 38);
             courseBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
@@ -154,7 +177,7 @@ namespace LostAndFound
             // CONTACT NUMBER TEXTBOX
             contactNumberBorder = new RoundedTextBoxBorder();
             contactNumberBorder.Parent = pnlRegister;
-            contactNumberBorder.Location = new Point(36, 345);
+            contactNumberBorder.Location = new Point(36, 320);
             contactNumberBorder.Size = new Size(308, 38);
             contactNumberBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
@@ -173,7 +196,7 @@ namespace LostAndFound
             // EMAIL TEXTBOX
             emailBorder = new RoundedTextBoxBorder();
             emailBorder.Parent = pnlRegister;
-            emailBorder.Location = new Point(36, 410);
+            emailBorder.Location = new Point(36, 380);
             emailBorder.Size = new Size(308, 38);
             emailBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
@@ -192,7 +215,7 @@ namespace LostAndFound
             // REGISTER PASSWORD TEXTBOX
             regPasswordBorder = new RoundedTextBoxBorder();
             regPasswordBorder.Parent = pnlRegister;
-            regPasswordBorder.Location = new Point(36, 475);
+            regPasswordBorder.Location = new Point(36, 440);
             regPasswordBorder.Size = new Size(308, 38);
             regPasswordBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
@@ -212,7 +235,7 @@ namespace LostAndFound
             // CONFIRM PASSWORD TEXTBOX
             confirmPasswordBorder = new RoundedTextBoxBorder();
             confirmPasswordBorder.Parent = pnlRegister;
-            confirmPasswordBorder.Location = new Point(36, 540);
+            confirmPasswordBorder.Location = new Point(36, 500);
             confirmPasswordBorder.Size = new Size(308, 38);
             confirmPasswordBorder.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
@@ -228,6 +251,12 @@ namespace LostAndFound
             txtConfirmPassword.UseSystemPasswordChar = true;
 
             confirmPasswordBorder.BringToFront();
+
+            // REGISTER BUTTON POSITION
+            btnRegister.Location = new Point(36, 550);
+
+            // SIGN IN LINK POSITION
+            lnkSignIn.Location = new Point(36, 595);
 
             // LOGIN ID NUMBER BORDER
             idBorder = new RoundedTextBoxBorder();
@@ -317,10 +346,29 @@ namespace LostAndFound
             pnlLogin.BringToFront();
         }
 
+        // CHANGE REGISTRATION LABELS BASED ON ROLE
+        private void RegisterRoleDropdown_SelectedRoleChanged(object sender, EventArgs e)
+        {
+            if (registerRoleDropdown.SelectedRole == "Student")
+            {
+                lblRegID.Text = "Student ID";
+                lblCourse.Text = "Course";
+            }
+            else if (registerRoleDropdown.SelectedRole == "Professor")
+            {
+                lblRegID.Text = "Employee ID";
+                lblCourse.Text = "Department";
+            }
+            else if (registerRoleDropdown.SelectedRole == "Guard")
+            {
+                lblRegID.Text = "Employee ID";
+                lblCourse.Text = "Post Location";
+            }
+        }
+
         // MAKE LOGIN AND REGISTER BUTTONS ROUNDED
         private void MakeLoginButtonRounded()
         {
-            // ROUND LOGIN BUTTON
             if (btnLogin.Width > 0 && btnLogin.Height > 0)
             {
                 using (GraphicsPath loginPath = new GraphicsPath())
@@ -341,7 +389,6 @@ namespace LostAndFound
                 }
             }
 
-            // ROUND REGISTER BUTTON
             if (btnRegister.Width > 0 && btnRegister.Height > 0)
             {
                 using (GraphicsPath registerPath = new GraphicsPath())
@@ -442,6 +489,8 @@ namespace LostAndFound
             get { return selectedRole; }
         }
 
+        public event EventHandler SelectedRoleChanged;
+
         public RoundedRoleDropdown()
         {
             SetStyle(
@@ -518,6 +567,9 @@ namespace LostAndFound
                 {
                     selectedRole = role;
                     Invalidate();
+
+                    SelectedRoleChanged?.Invoke(this, EventArgs.Empty);
+
                     popup.Close();
                 };
 
