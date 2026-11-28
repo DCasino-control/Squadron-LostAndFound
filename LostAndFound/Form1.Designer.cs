@@ -45,30 +45,31 @@ namespace LostAndFound
             this.pnlFooterLine = new System.Windows.Forms.Panel();
             this.lblUserName = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblDashboardTitle = new System.Windows.Forms.Label();
-            this.lblDashboardSubtitle = new System.Windows.Forms.Label();
-            this.pnlTotalItems = new System.Windows.Forms.Panel();
-            this.lblTotalItemsCount = new System.Windows.Forms.Label();
-            this.lblTotalItemsTitle = new System.Windows.Forms.Label();
-            this.pnlOpen = new System.Windows.Forms.Panel();
-            this.lblOpenCount = new System.Windows.Forms.Label();
-            this.lblOpenTitle = new System.Windows.Forms.Label();
-            this.pnlMatched = new System.Windows.Forms.Panel();
-            this.lblMatchedCount = new System.Windows.Forms.Label();
-            this.lblMatchedTitle = new System.Windows.Forms.Label();
-            this.pnlClaimed = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblClaimedTitle = new System.Windows.Forms.Label();
             this.pnlDashboardHeader = new System.Windows.Forms.Panel();
             this.pnlHeaderLine = new System.Windows.Forms.Panel();
+            this.lblDashboardSubtitle = new System.Windows.Forms.Label();
+            this.lblDashboardTitle = new System.Windows.Forms.Label();
+            this.pnlClaimed = new System.Windows.Forms.Panel();
+            this.lblClaimedTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlMatched = new System.Windows.Forms.Panel();
+            this.lblMatchedTitle = new System.Windows.Forms.Label();
+            this.lblMatchedCount = new System.Windows.Forms.Label();
+            this.pnlOpen = new System.Windows.Forms.Panel();
+            this.lblOpenTitle = new System.Windows.Forms.Label();
+            this.lblOpenCount = new System.Windows.Forms.Label();
+            this.pnlTotalItems = new System.Windows.Forms.Panel();
+            this.lblTotalItemsTitle = new System.Windows.Forms.Label();
+            this.lblTotalItemsCount = new System.Windows.Forms.Label();
+            this.pnlItems = new System.Windows.Forms.Panel();
             this.pnlSidebar.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.pnlMain.SuspendLayout();
-            this.pnlTotalItems.SuspendLayout();
-            this.pnlOpen.SuspendLayout();
-            this.pnlMatched.SuspendLayout();
-            this.pnlClaimed.SuspendLayout();
             this.pnlDashboardHeader.SuspendLayout();
+            this.pnlClaimed.SuspendLayout();
+            this.pnlMatched.SuspendLayout();
+            this.pnlOpen.SuspendLayout();
+            this.pnlTotalItems.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidebar
@@ -279,6 +280,7 @@ namespace LostAndFound
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.pnlMain.Controls.Add(this.pnlItems);
             this.pnlMain.Controls.Add(this.pnlDashboardHeader);
             this.pnlMain.Controls.Add(this.pnlClaimed);
             this.pnlMain.Controls.Add(this.pnlMatched);
@@ -290,17 +292,27 @@ namespace LostAndFound
             this.pnlMain.TabIndex = 1;
             this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
             // 
-            // lblDashboardTitle
+            // pnlDashboardHeader
             // 
-            this.lblDashboardTitle.AutoSize = true;
-            this.lblDashboardTitle.Font = new System.Drawing.Font("Segoe UI", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboardTitle.ForeColor = System.Drawing.Color.Brown;
-            this.lblDashboardTitle.Location = new System.Drawing.Point(15, 25);
-            this.lblDashboardTitle.Name = "lblDashboardTitle";
-            this.lblDashboardTitle.Size = new System.Drawing.Size(159, 38);
-            this.lblDashboardTitle.TabIndex = 0;
-            this.lblDashboardTitle.Text = "Dashboard";
-            this.lblDashboardTitle.Click += new System.EventHandler(this.lblDashboardTitle_Click);
+            this.pnlDashboardHeader.BackColor = System.Drawing.Color.White;
+            this.pnlDashboardHeader.Controls.Add(this.pnlHeaderLine);
+            this.pnlDashboardHeader.Controls.Add(this.lblDashboardSubtitle);
+            this.pnlDashboardHeader.Controls.Add(this.lblDashboardTitle);
+            this.pnlDashboardHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlDashboardHeader.Name = "pnlDashboardHeader";
+            this.pnlDashboardHeader.Size = new System.Drawing.Size(924, 100);
+            this.pnlDashboardHeader.TabIndex = 7;
+            this.pnlDashboardHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDashboardHeader_Paint);
+            // 
+            // pnlHeaderLine
+            // 
+            this.pnlHeaderLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
+            this.pnlHeaderLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.pnlHeaderLine.Location = new System.Drawing.Point(0, 99);
+            this.pnlHeaderLine.Name = "pnlHeaderLine";
+            this.pnlHeaderLine.Size = new System.Drawing.Size(924, 1);
+            this.pnlHeaderLine.TabIndex = 6;
+            this.pnlHeaderLine.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeaderLine_Paint);
             // 
             // lblDashboardSubtitle
             // 
@@ -314,6 +326,121 @@ namespace LostAndFound
             this.lblDashboardSubtitle.Text = "Overview of lost and found items";
             this.lblDashboardSubtitle.Click += new System.EventHandler(this.lblDashboardSubtitle_Click);
             // 
+            // lblDashboardTitle
+            // 
+            this.lblDashboardTitle.AutoSize = true;
+            this.lblDashboardTitle.Font = new System.Drawing.Font("Segoe UI", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboardTitle.ForeColor = System.Drawing.Color.Brown;
+            this.lblDashboardTitle.Location = new System.Drawing.Point(15, 25);
+            this.lblDashboardTitle.Name = "lblDashboardTitle";
+            this.lblDashboardTitle.Size = new System.Drawing.Size(159, 38);
+            this.lblDashboardTitle.TabIndex = 0;
+            this.lblDashboardTitle.Text = "Dashboard";
+            this.lblDashboardTitle.Click += new System.EventHandler(this.lblDashboardTitle_Click);
+            // 
+            // pnlClaimed
+            // 
+            this.pnlClaimed.Controls.Add(this.lblClaimedTitle);
+            this.pnlClaimed.Controls.Add(this.label1);
+            this.pnlClaimed.Location = new System.Drawing.Point(672, 115);
+            this.pnlClaimed.Name = "pnlClaimed";
+            this.pnlClaimed.Size = new System.Drawing.Size(210, 82);
+            this.pnlClaimed.TabIndex = 5;
+            this.pnlClaimed.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlClaimed_Paint);
+            // 
+            // lblClaimedTitle
+            // 
+            this.lblClaimedTitle.AutoSize = true;
+            this.lblClaimedTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClaimedTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
+            this.lblClaimedTitle.Location = new System.Drawing.Point(16, 46);
+            this.lblClaimedTitle.Name = "lblClaimedTitle";
+            this.lblClaimedTitle.Size = new System.Drawing.Size(51, 15);
+            this.lblClaimedTitle.TabIndex = 7;
+            this.lblClaimedTitle.Text = "Claimed";
+            this.lblClaimedTitle.Click += new System.EventHandler(this.lblClaimedTitle_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Brown;
+            this.label1.Location = new System.Drawing.Point(16, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 35);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "0";
+            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            // 
+            // pnlMatched
+            // 
+            this.pnlMatched.Controls.Add(this.lblMatchedTitle);
+            this.pnlMatched.Controls.Add(this.lblMatchedCount);
+            this.pnlMatched.Location = new System.Drawing.Point(453, 115);
+            this.pnlMatched.Name = "pnlMatched";
+            this.pnlMatched.Size = new System.Drawing.Size(210, 82);
+            this.pnlMatched.TabIndex = 4;
+            this.pnlMatched.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMatched_Paint);
+            // 
+            // lblMatchedTitle
+            // 
+            this.lblMatchedTitle.AutoSize = true;
+            this.lblMatchedTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatchedTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
+            this.lblMatchedTitle.Location = new System.Drawing.Point(16, 46);
+            this.lblMatchedTitle.Name = "lblMatchedTitle";
+            this.lblMatchedTitle.Size = new System.Drawing.Size(54, 15);
+            this.lblMatchedTitle.TabIndex = 1;
+            this.lblMatchedTitle.Text = "Matched";
+            this.lblMatchedTitle.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // lblMatchedCount
+            // 
+            this.lblMatchedCount.AutoSize = true;
+            this.lblMatchedCount.Font = new System.Drawing.Font("Segoe UI", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatchedCount.ForeColor = System.Drawing.Color.Brown;
+            this.lblMatchedCount.Location = new System.Drawing.Point(16, 12);
+            this.lblMatchedCount.Name = "lblMatchedCount";
+            this.lblMatchedCount.Size = new System.Drawing.Size(29, 35);
+            this.lblMatchedCount.TabIndex = 0;
+            this.lblMatchedCount.Text = "0";
+            this.lblMatchedCount.Click += new System.EventHandler(this.lblMatchedCount_Click);
+            // 
+            // pnlOpen
+            // 
+            this.pnlOpen.BackColor = System.Drawing.Color.White;
+            this.pnlOpen.Controls.Add(this.lblOpenTitle);
+            this.pnlOpen.Controls.Add(this.lblOpenCount);
+            this.pnlOpen.Location = new System.Drawing.Point(234, 115);
+            this.pnlOpen.Name = "pnlOpen";
+            this.pnlOpen.Size = new System.Drawing.Size(210, 82);
+            this.pnlOpen.TabIndex = 3;
+            this.pnlOpen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlOpen_Paint);
+            // 
+            // lblOpenTitle
+            // 
+            this.lblOpenTitle.AutoSize = true;
+            this.lblOpenTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpenTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
+            this.lblOpenTitle.Location = new System.Drawing.Point(16, 46);
+            this.lblOpenTitle.Name = "lblOpenTitle";
+            this.lblOpenTitle.Size = new System.Drawing.Size(36, 15);
+            this.lblOpenTitle.TabIndex = 1;
+            this.lblOpenTitle.Text = "Open";
+            this.lblOpenTitle.Click += new System.EventHandler(this.lblOpenTitle_Click);
+            // 
+            // lblOpenCount
+            // 
+            this.lblOpenCount.AutoSize = true;
+            this.lblOpenCount.Font = new System.Drawing.Font("Segoe UI", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpenCount.ForeColor = System.Drawing.Color.Brown;
+            this.lblOpenCount.Location = new System.Drawing.Point(16, 12);
+            this.lblOpenCount.Name = "lblOpenCount";
+            this.lblOpenCount.Size = new System.Drawing.Size(29, 35);
+            this.lblOpenCount.TabIndex = 0;
+            this.lblOpenCount.Text = "0";
+            this.lblOpenCount.Click += new System.EventHandler(this.lblOpenCount_Click);
+            // 
             // pnlTotalItems
             // 
             this.pnlTotalItems.BackColor = System.Drawing.Color.White;
@@ -324,6 +451,18 @@ namespace LostAndFound
             this.pnlTotalItems.Size = new System.Drawing.Size(210, 82);
             this.pnlTotalItems.TabIndex = 2;
             this.pnlTotalItems.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTotalItems_Paint);
+            // 
+            // lblTotalItemsTitle
+            // 
+            this.lblTotalItemsTitle.AutoSize = true;
+            this.lblTotalItemsTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalItemsTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
+            this.lblTotalItemsTitle.Location = new System.Drawing.Point(16, 46);
+            this.lblTotalItemsTitle.Name = "lblTotalItemsTitle";
+            this.lblTotalItemsTitle.Size = new System.Drawing.Size(65, 15);
+            this.lblTotalItemsTitle.TabIndex = 4;
+            this.lblTotalItemsTitle.Text = "Total Items";
+            this.lblTotalItemsTitle.Click += new System.EventHandler(this.lblTotalItemsTitle_Click);
             // 
             // lblTotalItemsCount
             // 
@@ -338,141 +477,13 @@ namespace LostAndFound
             this.lblTotalItemsCount.Text = "0";
             this.lblTotalItemsCount.Click += new System.EventHandler(this.lblTotalItemsCount_Click);
             // 
-            // lblTotalItemsTitle
+            // pnlItems
             // 
-            this.lblTotalItemsTitle.AutoSize = true;
-            this.lblTotalItemsTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalItemsTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
-            this.lblTotalItemsTitle.Location = new System.Drawing.Point(16, 46);
-            this.lblTotalItemsTitle.Name = "lblTotalItemsTitle";
-            this.lblTotalItemsTitle.Size = new System.Drawing.Size(65, 15);
-            this.lblTotalItemsTitle.TabIndex = 4;
-            this.lblTotalItemsTitle.Text = "Total Items";
-            this.lblTotalItemsTitle.Click += new System.EventHandler(this.lblTotalItemsTitle_Click);
-            // 
-            // pnlOpen
-            // 
-            this.pnlOpen.BackColor = System.Drawing.Color.White;
-            this.pnlOpen.Controls.Add(this.lblOpenTitle);
-            this.pnlOpen.Controls.Add(this.lblOpenCount);
-            this.pnlOpen.Location = new System.Drawing.Point(234, 115);
-            this.pnlOpen.Name = "pnlOpen";
-            this.pnlOpen.Size = new System.Drawing.Size(210, 82);
-            this.pnlOpen.TabIndex = 3;
-            this.pnlOpen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlOpen_Paint);
-            // 
-            // lblOpenCount
-            // 
-            this.lblOpenCount.AutoSize = true;
-            this.lblOpenCount.Font = new System.Drawing.Font("Segoe UI", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpenCount.ForeColor = System.Drawing.Color.Brown;
-            this.lblOpenCount.Location = new System.Drawing.Point(16, 12);
-            this.lblOpenCount.Name = "lblOpenCount";
-            this.lblOpenCount.Size = new System.Drawing.Size(29, 35);
-            this.lblOpenCount.TabIndex = 0;
-            this.lblOpenCount.Text = "0";
-            this.lblOpenCount.Click += new System.EventHandler(this.lblOpenCount_Click);
-            // 
-            // lblOpenTitle
-            // 
-            this.lblOpenTitle.AutoSize = true;
-            this.lblOpenTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpenTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
-            this.lblOpenTitle.Location = new System.Drawing.Point(16, 46);
-            this.lblOpenTitle.Name = "lblOpenTitle";
-            this.lblOpenTitle.Size = new System.Drawing.Size(36, 15);
-            this.lblOpenTitle.TabIndex = 1;
-            this.lblOpenTitle.Text = "Open";
-            this.lblOpenTitle.Click += new System.EventHandler(this.lblOpenTitle_Click);
-            // 
-            // pnlMatched
-            // 
-            this.pnlMatched.Controls.Add(this.lblMatchedTitle);
-            this.pnlMatched.Controls.Add(this.lblMatchedCount);
-            this.pnlMatched.Location = new System.Drawing.Point(453, 115);
-            this.pnlMatched.Name = "pnlMatched";
-            this.pnlMatched.Size = new System.Drawing.Size(210, 82);
-            this.pnlMatched.TabIndex = 4;
-            this.pnlMatched.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMatched_Paint);
-            // 
-            // lblMatchedCount
-            // 
-            this.lblMatchedCount.AutoSize = true;
-            this.lblMatchedCount.Font = new System.Drawing.Font("Segoe UI", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatchedCount.ForeColor = System.Drawing.Color.Brown;
-            this.lblMatchedCount.Location = new System.Drawing.Point(16, 12);
-            this.lblMatchedCount.Name = "lblMatchedCount";
-            this.lblMatchedCount.Size = new System.Drawing.Size(29, 35);
-            this.lblMatchedCount.TabIndex = 0;
-            this.lblMatchedCount.Text = "0";
-            this.lblMatchedCount.Click += new System.EventHandler(this.lblMatchedCount_Click);
-            // 
-            // lblMatchedTitle
-            // 
-            this.lblMatchedTitle.AutoSize = true;
-            this.lblMatchedTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatchedTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
-            this.lblMatchedTitle.Location = new System.Drawing.Point(16, 46);
-            this.lblMatchedTitle.Name = "lblMatchedTitle";
-            this.lblMatchedTitle.Size = new System.Drawing.Size(54, 15);
-            this.lblMatchedTitle.TabIndex = 1;
-            this.lblMatchedTitle.Text = "Matched";
-            this.lblMatchedTitle.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // pnlClaimed
-            // 
-            this.pnlClaimed.Controls.Add(this.lblClaimedTitle);
-            this.pnlClaimed.Controls.Add(this.label1);
-            this.pnlClaimed.Location = new System.Drawing.Point(672, 115);
-            this.pnlClaimed.Name = "pnlClaimed";
-            this.pnlClaimed.Size = new System.Drawing.Size(210, 82);
-            this.pnlClaimed.TabIndex = 5;
-            this.pnlClaimed.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlClaimed_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(16, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 35);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "0";
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
-            // 
-            // lblClaimedTitle
-            // 
-            this.lblClaimedTitle.AutoSize = true;
-            this.lblClaimedTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClaimedTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
-            this.lblClaimedTitle.Location = new System.Drawing.Point(16, 46);
-            this.lblClaimedTitle.Name = "lblClaimedTitle";
-            this.lblClaimedTitle.Size = new System.Drawing.Size(51, 15);
-            this.lblClaimedTitle.TabIndex = 7;
-            this.lblClaimedTitle.Text = "Claimed";
-            this.lblClaimedTitle.Click += new System.EventHandler(this.lblClaimedTitle_Click);
-            // 
-            // pnlDashboardHeader
-            // 
-            this.pnlDashboardHeader.BackColor = System.Drawing.Color.White;
-            this.pnlDashboardHeader.Controls.Add(this.pnlHeaderLine);
-            this.pnlDashboardHeader.Controls.Add(this.lblDashboardSubtitle);
-            this.pnlDashboardHeader.Controls.Add(this.lblDashboardTitle);
-            this.pnlDashboardHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlDashboardHeader.Name = "pnlDashboardHeader";
-            this.pnlDashboardHeader.Size = new System.Drawing.Size(924, 100);
-            this.pnlDashboardHeader.TabIndex = 7;
-            // 
-            // pnlHeaderLine
-            // 
-            this.pnlHeaderLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
-            this.pnlHeaderLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.pnlHeaderLine.Location = new System.Drawing.Point(0, 99);
-            this.pnlHeaderLine.Name = "pnlHeaderLine";
-            this.pnlHeaderLine.Size = new System.Drawing.Size(924, 1);
-            this.pnlHeaderLine.TabIndex = 6;
-            this.pnlHeaderLine.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeaderLine_Paint);
+            this.pnlItems.BackColor = System.Drawing.Color.White;
+            this.pnlItems.Location = new System.Drawing.Point(15, 215);
+            this.pnlItems.Name = "pnlItems";
+            this.pnlItems.Size = new System.Drawing.Size(894, 380);
+            this.pnlItems.TabIndex = 8;
             // 
             // Form1
             // 
@@ -493,16 +504,16 @@ namespace LostAndFound
             this.pnlSidebar.PerformLayout();
             this.pnlFooter.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
-            this.pnlTotalItems.ResumeLayout(false);
-            this.pnlTotalItems.PerformLayout();
-            this.pnlOpen.ResumeLayout(false);
-            this.pnlOpen.PerformLayout();
-            this.pnlMatched.ResumeLayout(false);
-            this.pnlMatched.PerformLayout();
-            this.pnlClaimed.ResumeLayout(false);
-            this.pnlClaimed.PerformLayout();
             this.pnlDashboardHeader.ResumeLayout(false);
             this.pnlDashboardHeader.PerformLayout();
+            this.pnlClaimed.ResumeLayout(false);
+            this.pnlClaimed.PerformLayout();
+            this.pnlMatched.ResumeLayout(false);
+            this.pnlMatched.PerformLayout();
+            this.pnlOpen.ResumeLayout(false);
+            this.pnlOpen.PerformLayout();
+            this.pnlTotalItems.ResumeLayout(false);
+            this.pnlTotalItems.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -540,5 +551,6 @@ namespace LostAndFound
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlDashboardHeader;
         private System.Windows.Forms.Panel pnlHeaderLine;
+        private System.Windows.Forms.Panel pnlItems;
     }
 }

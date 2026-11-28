@@ -37,7 +37,8 @@ namespace LostAndFound
         public Form1()
         {
             InitializeComponent();
-
+            StyleRoundedPanel(pnlItems);
+            ApplyRoundedPanelRegion(pnlItems, 10);
             SetTitleBarColor();
 
             // Applies styling to all four dashboard cards.
@@ -97,6 +98,10 @@ namespace LostAndFound
         // Applies rounded corners, a light border, and a subtle shadow.
         private void StyleRoundedPanel(Panel panel)
         {
+            panel.Resize += (s, e) =>
+            {
+                ApplyRoundedPanelRegion(panel, 10);
+            };
             panel.BackColor = Color.White;
             panel.BorderStyle = BorderStyle.None;
 
@@ -431,6 +436,11 @@ namespace LostAndFound
 
         private void pnlHeaderLine_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void pnlDashboardHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
